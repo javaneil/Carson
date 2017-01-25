@@ -12,11 +12,13 @@ Often times it seems when I purchase or refill a brewed coffed at Starbucks,
 Carson the Coffee Butler is a system concept to address two facets of coffee
  urn management:
  
-**1 - Realtime monitoring of urn status
+**1 - Realtime monitoring of urn status**
+
 Urn status is continuously monitored and status displayed on a mobile device
  such as an iPhone or Android tablet with user selectable alarm thresholds.
  
-**2 - Site data collection of usage and ambient conditions
+**2 - Site data collection of usage and ambient conditions**
+
 Current rate of consumption used to anticipate depletion of an urn's contents.
 Long-term data analysis to predict usage based on season, day of week, ambient
 weather conditions, etc.
