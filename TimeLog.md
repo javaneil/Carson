@@ -19,7 +19,7 @@
 |                | Revise Carson Project's Entities & ERD | 1 |  |
 |                | Study more in-class & on-line examples of Hibernate | 3 |  |
 | Fr 03-Feb-2017 | More MySQL review & dive deeper into IntelliJ Database tool | 3 | Create new DB for week3exercise & implement |
-| Sa 04-Feb-2017 |  |  |  |
+| Sa 04-Feb-2017 | Cleanup week3exercise & push.  Clone Carson to ~/IdeaProject directory | 1 |  |
 | Su 05-Feb-2017 |  |  |  |
 | Mo 06-Feb-2017 |  |  |  |
 | Tu 07-Feb-2017 |  |  |  |
