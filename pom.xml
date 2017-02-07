@@ -5,6 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>edu.matc.carson</groupId>
     <artifactId>carsonProject</artifactId>
+    <!-- added 2017_02_06nkf - will this fix deploying a .jar? -->
+    <packaging>war</packaging>
+
     <version>1.0-SNAPSHOT</version>
     <name>carsonProject Maven Webapp</name>
     <url>http://maven.apache.org</url>

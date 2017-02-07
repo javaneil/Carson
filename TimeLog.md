@@ -19,8 +19,8 @@
 |                | Revise Carson Project's Entities & ERD | 1 |  |
 |                | Study more in-class & on-line examples of Hibernate | 3 |  |
 | Fr 03-Feb-2017 | More MySQL review & dive deeper into IntelliJ Database tool | 3 | Create new DB for week3exercise & implement |
-| Sa 04-Feb-2017 | Cleanup week3exercise & push.  Clone Carson to ~/IdeaProject directory | 1 |  |
-| Su 05-Feb-2017 |  |  |  |
+| Sa 04-Feb-2017 | Cleanup week3exercise & push.  Clone Carson to ~/IdeaProject directory | 5 | Having trouble with deploy, not outputting a .war file?  |
+| Su 05-Feb-2017 | Began creating Carson table using MySQL Workbench.  Had a lot of problems with Foreign Keys. | 4 | csv import would be useful, but having issues writing key values  |
 | Mo 06-Feb-2017 |  |  |  |
 | Tu 07-Feb-2017 |  |  |  |
 | We 08-Feb-2017 |  |  |  |
