@@ -1,4 +1,4 @@
-package edu.matc.util;
+package com.fortney.util;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

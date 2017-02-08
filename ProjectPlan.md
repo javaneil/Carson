@@ -32,8 +32,8 @@
 - [ ] Create database and all tables/columns locally
 - [ ] Create DAO for urns crud
 - [ ] Add unit tests for DAO
-- [ ] Add user login  
-- [ ] Add user registration
+- [ ] Add coffee login  
+- [ ] Add coffee registration
 - [ ] Time log entries
 
 ### Week 6

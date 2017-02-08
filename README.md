@@ -15,7 +15,7 @@ Carson the Coffee Butler is a system concept to address two facets of coffee
 **1 - Realtime monitoring of urn status**
 
 Urn status is continuously monitored and status displayed on a mobile device
- such as an iPhone or Android tablet with user selectable alarm thresholds.
+ such as an iPhone or Android tablet with coffee selectable alarm thresholds.
  
 **2 - Site data collection of usage and ambient conditions**
 

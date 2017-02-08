@@ -1,21 +1,19 @@
-package edu.matc.persistence;
+package com.fortney.persistence;
 
-import edu.matc.entity.User;
+import com.fortney.entity.Coffee;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
 import java.util.ArrayList;
 import java.util.List;
 
 
 /**
- * Created by paulawaite on 2/2/16.
+ * Created by neilfortney
  */
-public class UserDao {
+public class CoffeeDao {
 
     private final Logger log = Logger.getLogger( this.getClass() ) ;
 
@@ -23,30 +21,30 @@ public class UserDao {
      *
      * @return All users
      */
-    public List<User> getAllUsers() {
-        List<User> users = new ArrayList<User>() ;
+    public List<Coffee> getAllCoffees() {
+        List<Coffee> coffees = new ArrayList<Coffee>() ;
         Session session = SessionFactoryProvider.getSessionFactory().openSession() ;
-        users = session.createCriteria(User.class).list() ;
-        return users ;
+        coffees = session.createCriteria(Coffee.class).list() ;
+        return coffees;
     }
 
     /**
-     * CREATE - add a new user row
+     * CREATE - add a new coffee row
      *
-     * @param user
+     * @param coffee
      * @return the id of the inserted record
      *
      * REFERENCE: https://www.tutorialspoint.com/hibernate/hibernate_examples.htm
      */
-    public int addUser( User user ) {
-        log.info( "UserDao.addUser( " + user + " )" ) ;
+    public int addCoffee( Coffee coffee ) {
+        log.info( "CoffeeDao.addCoffee( " + coffee + " )" ) ;
         int id = 0 ;
 
         Session session = SessionFactoryProvider.getSessionFactory().openSession() ;
         Transaction transaction = null ;
         try {
             transaction = session.beginTransaction() ;
-            id = (int) session.save( user ) ;
+            id = (int) session.save( coffee ) ;
             transaction.commit() ;
         }
         catch ( HibernateException hex ) {
@@ -62,18 +60,18 @@ public class UserDao {
     }
 
     /**
-     * RETRIEVE - retrieve a user row given its id
+     * RETRIEVE - retrieve a coffee row given its id
      *
-     * @param id the user's id
-     * @return user
+     * @param id the coffee's id
+     * @return coffee object
      */
-    public User getUser( int id ) {
-        log.info( "UserDao.getUser( " + id + " )" ) ;
-        User user = null ;
+    public Coffee getCoffee( int id ) {
+        log.info( "CoffeeDao.getCoffee( " + id + " )" ) ;
+        Coffee coffee = null ;
 
         Session session = SessionFactoryProvider.getSessionFactory().openSession() ;
         try {
-            user = (User) session.get( User.class, id ) ;
+            coffee = (Coffee) session.get( Coffee.class, id ) ;
         }
         catch ( HibernateException hex ) {
             log.error( "Session.save fail:  ", hex ) ;
@@ -81,21 +79,21 @@ public class UserDao {
         finally {
             session.close() ;
         }
-        return user ;
+        return coffee ;
     }
 
     /**
-     * UPDATE - Change existing user row
-     * @param user
+     * UPDATE - Change existing coffee row
+     * @param coffee
      */
-    public void updateUser( User user ) {
-        log.info( "UserDao.updateUser( " + user + " )" ) ;
+    public void updateCoffee( Coffee coffee) {
+        log.info( "CoffeeDao.updateUser( " + coffee + " )" ) ;
 
         Session session = SessionFactoryProvider.getSessionFactory().openSession() ;
         Transaction transaction = null ;
         try {
             transaction = session.beginTransaction() ;
-            session.update( user ) ;
+            session.update(coffee) ;
             transaction.commit() ;
         }
         catch ( HibernateException hex ) {
@@ -110,20 +108,20 @@ public class UserDao {
     }
 
     /**
-     * DELETE - remove a user row by id
-     * @param id the user's id
+     * DELETE - remove a coffee row by id
+     * @param id the coffee's id
      *
      * REFERENCE: https://www.tutorialspoint.com/hibernate/hibernate_examples.htm
      */
-    public void deleteUser( int id ) {
-        log.info( "UserDao.deleteUser( " + id + " )" ) ;
+    public void deleteCoffee( int id ) {
+        log.info( "CoffeeDao.deleteUser( " + id + " )" ) ;
 
         Session session = SessionFactoryProvider.getSessionFactory().openSession() ;
         Transaction transaction = null ;
         try {
             transaction = session.beginTransaction() ;
-            User user = (User) session.get( User.class, id ) ;
-            session.delete( user ) ;
+            Coffee coffee = (Coffee) session.get( Coffee.class, id ) ;
+            session.delete(coffee) ;
             transaction.commit() ;
         }
         catch ( HibernateException hex ) {
