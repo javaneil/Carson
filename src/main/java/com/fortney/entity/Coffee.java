@@ -54,6 +54,7 @@ public class Coffee {
      * empty Constructor
      */
     public Coffee() {
+        System.out.println( "Coffee Constructor" ) ;
     }
 
     public Coffee( int id, String name, String desc, String vendor, String addr,
@@ -67,6 +68,10 @@ public class Coffee {
         this.vendorStProv = st ;
         this.vendorMailCode = zip ;
         this.vendorPhone = phone ;
+    }
+
+    public void setCoffeeId( int coffeeId ) {
+        this.coffeeId = coffeeId ;
     }
 
     public int getCoffeeId() {

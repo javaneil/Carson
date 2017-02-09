@@ -21,9 +21,9 @@
 | Fr 03-Feb-2017 | More MySQL review & dive deeper into IntelliJ Database tool | 3 | Create new DB for week3exercise & implement |
 | Sa 04-Feb-2017 | Cleanup week3exercise & push.  Clone Carson to ~/IdeaProject directory | 5 | Having trouble with deploy, not outputting a .war file?  |
 | Su 05-Feb-2017 | Began creating Carson table using MySQL Workbench.  Had a lot of problems with Foreign Keys. | 4 | csv import would be useful, but having issues writing key values  |
-| Mo 06-Feb-2017 |  |  |  |
-| Tu 07-Feb-2017 |  |  |  |
-| We 08-Feb-2017 |  |  |  |
+| Mo 06-Feb-2017 | Created basic entities and tested simple Join in MySQL Workbench | 5 | Must use INDEX/KEY with MySQL Foreign keys |
+| Tu 07-Feb-2017 | Reading, Replace example DAOs with actual & add Junit tests | 3 |  |
+| We 08-Feb-2017 | Add entity with Join.  FINALLY got two tables to compile and associate.  Junit tests a real pain if the DB gets corrupted!  | 7 | Refactored Sessions entity to Records (Hibernate has a Session class & it was confusing)  |
 | Th 09-Feb-2017 |  |  |  |
 | Fr 10-Feb-2017 |  |  |  |
 | Sa 11-Feb-2017 |  |  |  |

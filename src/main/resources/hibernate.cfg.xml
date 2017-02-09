@@ -37,6 +37,8 @@ To start over, drop the database:
 
         <!-- List the annotated entity class/es -->
         <mapping class="com.fortney.entity.Coffee"/>
+        <mapping class="com.fortney.entity.Records"/>
+        <mapping class="com.fortney.entity.Urns"/>
 
     </session-factory>
 </hibernate-configuration>

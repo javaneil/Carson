@@ -17,9 +17,9 @@ public class CoffeeDao {
 
     private final Logger log = Logger.getLogger( this.getClass() ) ;
 
-    /** Return a list of all users
+    /** Return a list of all coffees
      *
-     * @return All users
+     * @return All coffees
      */
     public List<Coffee> getAllCoffees() {
         List<Coffee> coffees = new ArrayList<Coffee>() ;

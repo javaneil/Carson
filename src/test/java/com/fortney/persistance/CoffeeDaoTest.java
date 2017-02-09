@@ -95,14 +95,16 @@ public class CoffeeDaoTest {
      * @throws Exception
      */
     @Test
-    public void deleteUser() throws Exception {
+    public void deleteCoffee() throws Exception {
         int id = dao.addCoffee( testCoffeeObj() ) ;
         dao.deleteCoffee( id ) ;
         Coffee delUser = dao.getCoffee( id ) ;
         assertNull( delUser ) ;
     }
 
-
+    /**
+     * Utilities
+     */
     private Coffee testCoffeeObj() {
         Coffee retObj = new Coffee(0, "Yuckban", "A truely disgusting cup of mud",
                 "Queequegs", "123 Oak Street", "Seattle", "WA", "98101",
