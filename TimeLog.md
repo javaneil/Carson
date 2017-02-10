@@ -23,9 +23,12 @@
 | Su 05-Feb-2017 | Began creating Carson table using MySQL Workbench.  Had a lot of problems with Foreign Keys. | 4 | csv import would be useful, but having issues writing key values  |
 | Mo 06-Feb-2017 | Created basic entities and tested simple Join in MySQL Workbench | 5 | Must use INDEX/KEY with MySQL Foreign keys |
 | Tu 07-Feb-2017 | Reading, Replace example DAOs with actual & add Junit tests | 3 |  |
-| We 08-Feb-2017 | Add entity with Join.  FINALLY got two tables to compile and associate.  Junit tests a real pain if the DB gets corrupted!  | 7 | Refactored Sessions entity to Records (Hibernate has a Session class & it was confusing)  |
-| Th 09-Feb-2017 |  |  |  |
-| Fr 10-Feb-2017 |  |  |  |
+| We 08-Feb-2017 | Add entity with Join.  FINALLY got two tables to compile and associate.  Junit tests a real pain if the DB gets corrupted!  | 7 | Refactored Sessions entity to Records (Hibernate has a Session class & it was confusing) |
+| Th 09-Feb-2017 | Peer Reviews for Joe & Keith | 1 |  |
+|                | Install Ubuntu on Dell B130 | 2 | Format drive, install, apt-get OpenJDK8 |
+|                | Install Raspian(Linux) on Raspberry Pi B+ | 1 | Download & flash SD-Card image |
+| Fr 10-Feb-2017 | Watch AWS videos, review initial setup, PuTTY, TomEE & MySQL | 2 | Was prompted to restart AWS server... |
+|                |  |  |  |
 | Sa 11-Feb-2017 |  |  |  |
 | Su 12-Feb-2017 |  |  |  |
 | Mo 13-Feb-2017 |  |  |  |
