@@ -27,7 +27,10 @@ To start over, drop the database:
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/carson</property>
         <property name="connection.username">root</property>
+        <!-- 2017-02-14nkf moving to AWS server
         <property name="connection.password">root</property>
+        -->
+        <property name="connection.password">nkfroot</property>
 
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>

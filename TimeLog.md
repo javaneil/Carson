@@ -28,7 +28,23 @@
 |                | Install Ubuntu on Dell B130 | 2 | Format drive, install, apt-get OpenJDK8 |
 |                | Install Raspian(Linux) on Raspberry Pi B+ | 1 | Download & flash SD-Card image |
 | Fr 10-Feb-2017 | Watch AWS videos, review initial setup, PuTTY, TomEE & MySQL | 2 | Was prompted to restart AWS server... |
-|                |  |  |  |
-| Sa 11-Feb-2017 |  |  |  |
-| Su 12-Feb-2017 |  |  |  |
-| Mo 13-Feb-2017 |  |  |  |
+|                | Debug MySQL password change on local Ubuntu | 2 |  MySQL V5.7.x must use authentication_string=PASSWORD |
+| Sa 11-Feb-2017 | Change AWS MySQL password, AWS setup part-3 | 2 | Recorded Windows screens |
+| Su 12-Feb-2017 | AWS setup part-4, test MySQL Workbench on AWS DB.  Resolve issues with TomEE Manager App setup. | 2 | Needed to assign TomEE rolename="manager-gui" |
+| Mo 13-Feb-2017 | Test deploy of week-1-exercise to AWS, week-5 security reading | 2 |  |
+|                |  | 3 | Ride bike to Bellville |
+| Tu 14-Feb-2017 | Prepare Carson project for deploy, unable to connect to AWS.  Had to edit AWS Security Group Inbound Source IP.  | 2 | Restarting home DSL re-assigned gateway IP address. |
+|                | Sandi EC feedback.  Successfully deploy CarsonWebApp to AWS. | 2 | Not sure how to configure logging on AWS |
+| We 15-Feb-2017 |  |  |  |
+| Th 16-Feb-2017 |  |  |  |
+| Fr 17-Feb-2017 |  |  |  |
+| Sa 18-Feb-2017 |  |  |  |
+| Su 19-Feb-2017 |  |  |  |
+| Mo 20-Feb-2017 |  |  |  |
+| Tu 21-Feb-2017 |  |  |  |
+| We 22-Feb-2017 |  |  |  |
+| Th 23-Feb-2017 |  |  |  |
+| Fr 24-Feb-2017 |  |  |  |
+| Sa 25-Feb-2017 |  |  |  |
+| Su 26-Feb-2017 |  |  |  |
+| Mo 27-Feb-2017 |  |  |  |

@@ -1,6 +1,7 @@
 package com.fortney.entity ;
 
 import com.fortney.util.LocalDateAttributeConverter ;
+import org.apache.log4j.Logger;
 import org.hibernate.annotations.GenericGenerator ;
 
 import javax.persistence.* ;
@@ -45,7 +46,9 @@ public class Records {
      * Empty Constructor
      */
     public Records() {
-        System.out.println( "Records Constructor" ) ;
+//        System.out.println( "Records Constructor" ) ;
+        Logger log = Logger.getLogger( this.getClass() ) ;
+        log.info( "Records Constructor" ) ;
     }
 
     /**

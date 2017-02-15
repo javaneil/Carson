@@ -1,6 +1,7 @@
 package com.fortney.entity;
 
 import com.fortney.util.LocalDateAttributeConverter;
+import org.apache.log4j.Logger;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ import java.time.LocalDate;
 @Table( name = "coffee" )
 public class Coffee {
     // Note: a LocalDate converter has been provided in the util package you will need it
+
     @Id
     @GeneratedValue( generator = "increment" )
     @GenericGenerator( name = "increment", strategy = "increment" )
@@ -54,7 +56,9 @@ public class Coffee {
      * empty Constructor
      */
     public Coffee() {
-        System.out.println( "Coffee Constructor" ) ;
+//        System.out.println( "Coffee Constructor" ) ;
+        Logger log = Logger.getLogger( this.getClass() ) ;
+        log.info( "Coffee Constructor" ) ;
     }
 
     public Coffee( int id, String name, String desc, String vendor, String addr,
