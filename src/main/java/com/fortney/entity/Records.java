@@ -24,11 +24,12 @@ public class Records {
     @Column( name = "record_id" )
     private int recordID ;
 
-    @OneToOne( cascade = CascadeType.ALL )
+/*    @OneToOne( cascade = CascadeType.ALL ) */
+    @ManyToOne( cascade=CascadeType.ALL )
     @JoinColumn( name = "urn_id" )
     private Urns urnID ;
 
-    @OneToOne( cascade = CascadeType.ALL )
+    @ManyToOne( cascade = CascadeType.ALL )
     @JoinColumn( name = "coffee_id" )
     private Coffee coffeeID ;
 
@@ -46,9 +47,18 @@ public class Records {
      * Empty Constructor
      */
     public Records() {
-//        System.out.println( "Records Constructor" ) ;
+        recordID = 0 ;
         Logger log = Logger.getLogger( this.getClass() ) ;
         log.info( "Records Constructor" ) ;
+    }
+
+    public Records( String currentLoc, String startDateTime ) {
+        recordID = 0 ; // database to assign next unique key
+        urnID = new Urns() ;
+        coffeeID = new Coffee() ;
+//        weatherID = new Weather() ;
+        this.currentLocation = currentLoc ;
+        this.startDateTime = startDateTime ;
     }
 
     /**
@@ -58,7 +68,6 @@ public class Records {
     public int getRecordID() {
         return recordID;
     }
-
     public void setRecordID(int recordID) {
         this.recordID = recordID;
     }
@@ -70,7 +79,6 @@ public class Records {
     public Urns getUrnID() {
         return urnID;
     }
-
     public void setUrnID(Urns urnID) {
         this.urnID = urnID;
     }
@@ -82,7 +90,6 @@ public class Records {
     public Coffee getCoffeeID() {
         return coffeeID;
     }
-
     public void setCoffeeID(Coffee coffeeID) {
         this.coffeeID = coffeeID;
     }
@@ -94,7 +101,6 @@ public class Records {
     public String getCurrentLocation() {
         return currentLocation;
     }
-
     public void setCurrentLocation(String currentLocation) {
         this.currentLocation = currentLocation;
     }
@@ -106,9 +112,7 @@ public class Records {
     public String getStartDateTime() {
         return startDateTime;
     }
-
     public void setStartDateTime(String startDateTime) {
         this.startDateTime = startDateTime;
     }
-
 }

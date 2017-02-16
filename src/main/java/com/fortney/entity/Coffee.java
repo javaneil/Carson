@@ -22,7 +22,7 @@ public class Coffee {
     @GeneratedValue( generator = "increment" )
     @GenericGenerator( name = "increment", strategy = "increment" )
     @Column( name = "coffee_id" )
-    private int coffeeId;
+    private int coffeeID;
 
     @Column( name = "name" )
     private String coffeeName ;
@@ -56,14 +56,14 @@ public class Coffee {
      * empty Constructor
      */
     public Coffee() {
-//        System.out.println( "Coffee Constructor" ) ;
+        coffeeID = 0 ; // database to assign next unique key
         Logger log = Logger.getLogger( this.getClass() ) ;
         log.info( "Coffee Constructor" ) ;
     }
 
-    public Coffee( int id, String name, String desc, String vendor, String addr,
+    public Coffee( String name, String desc, String vendor, String addr,
                    String city, String st, String zip, String phone ) {
-        this.coffeeId = id;
+        this.coffeeID = 0 ;
         this.coffeeName = name ;
         this.description = desc ;
         this.vendorName = vendor ;
@@ -74,18 +74,16 @@ public class Coffee {
         this.vendorPhone = phone ;
     }
 
-    public void setCoffeeId( int coffeeId ) {
-        this.coffeeId = coffeeId ;
+    public void setCoffeeId( int coffeeID ) {
+        this.coffeeID = coffeeID ;
     }
-
     public int getCoffeeId() {
-        return coffeeId;
+        return coffeeID;
     }
 
     public String getCoffeeName() {
         return coffeeName;
     }
-
     public void setCoffeeName( String coffeeName) {
         this.coffeeName = coffeeName;
     }
@@ -93,7 +91,6 @@ public class Coffee {
     public String getDescription() {
         return description;
     }
-
     public void setDescription( String description ) {
         this.description = description;
     }
@@ -101,7 +98,6 @@ public class Coffee {
     public String getVendorName() {
         return vendorName;
     }
-
     public void setVendorName( String vendorName ) {
         this.vendorName = vendorName;
     }
@@ -109,7 +105,6 @@ public class Coffee {
     public String getVendorAddress() {
         return vendorAddress;
     }
-
     public void setVendorAddress(String vendorAddress) {
         this.vendorAddress = vendorAddress;
     }
@@ -117,7 +112,6 @@ public class Coffee {
     public String getVendorCity() {
         return vendorCity;
     }
-
     public void setVendorCity(String vendorCity) {
         this.vendorCity = vendorCity;
     }
@@ -125,7 +119,6 @@ public class Coffee {
     public String getVendorStProv() {
         return vendorStProv;
     }
-
     public void setVendorStProv(String vendorStProv) {
         this.vendorStProv = vendorStProv;
     }
@@ -133,7 +126,6 @@ public class Coffee {
     public String getVendorMailCode() {
         return vendorMailCode;
     }
-
     public void setVendorMailCode(String vendorMailCode) {
         this.vendorMailCode = vendorMailCode;
     }
@@ -141,7 +133,6 @@ public class Coffee {
     public String getVendorPhone() {
         return vendorPhone;
     }
-
     public void setVendorPhone(String vendorPhone) {
         this.vendorPhone = vendorPhone;
     }
@@ -150,7 +141,6 @@ public class Coffee {
     public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
-
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }

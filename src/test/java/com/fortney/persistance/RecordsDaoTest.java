@@ -18,7 +18,7 @@ import static org.junit.Assert.* ;
  */
 public class RecordsDaoTest {
 
-    RecordsDao dao;
+    private RecordsDao dao;
 
     /**
      * REFERENCE: http://codesolid.com/a-simple-hibernate-mysql-and-junit-tutorial/
@@ -26,7 +26,7 @@ public class RecordsDaoTest {
 
     @Before
     public void setup() {
-        dao = new RecordsDao();
+        dao = new RecordsDao() ;
     }
 
     @After
@@ -42,7 +42,7 @@ public class RecordsDaoTest {
     @Test
     public void getAllRecords() throws Exception {
         List<Records> records = dao.getAllRecords() ;
-        assertTrue(records.size() > 0);
+        assertTrue(records.size() > 0 ) ;
     }
 
     @Test
@@ -52,6 +52,20 @@ public class RecordsDaoTest {
         if ( 0 < id ) {
             dao.deleteRecord( id ) ;
         }
+    }
+
+    @Test
+    public void updateRecord() throws Exception {
+        Records rec = testRecordObj() ;
+        int id = dao.createRecord( rec ) ;
+        rec.setCurrentLocation( "Back Counter" ) ; ;
+        dao.updateRecord( rec ) ;
+        Records updRecord = dao.retrieveRecord( id ) ;
+        assertEquals( updRecord.getCurrentLocation(), "Back Counter" ) ;
+        if ( (null != updRecord) && (0 < id) ) {
+            dao.deleteRecord( id ) ;
+        }
+
     }
 
     @Test
@@ -65,18 +79,7 @@ public class RecordsDaoTest {
 
 
     private Records testRecordObj() {
-        Records retObj = new Records() ;
-        // Foreign Keys are objects
-        Urns urnObj = new Urns() ;
-        urnObj.setUrnID( 0 ) ;
-        Coffee coffeeObj = new Coffee() ;
-        coffeeObj.setCoffeeId( 0 ) ;
-
-        retObj.setRecordID( 0 ) ;
-        retObj.setUrnID( urnObj ) ; // foreign key
-        retObj.setCoffeeID( coffeeObj ) ; // foreign key
-        retObj.setCurrentLocation( "Front Counter" ) ;
-        retObj.setStartDateTime( "2017-02-05 12:00:00" ) ;
+        Records retObj = new Records("Front Counter", "2017-02-05 12:00:00" ) ;
         return retObj;
     }
 }

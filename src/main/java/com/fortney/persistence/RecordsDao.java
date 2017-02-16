@@ -16,8 +16,6 @@ public class RecordsDao {
 
     private final Logger log = Logger.getLogger( this.getClass() ) ;
 
-    public RecordsDao() {
-    }
 
     /** Return a list of all Records
      *
@@ -25,19 +23,31 @@ public class RecordsDao {
      */
     public List<Records> getAllRecords() {
         List<Records> records = new ArrayList<Records>() ;
-        Session session = SessionFactoryProvider.getSessionFactory().openSession() ;
-        records = session.createCriteria( Records.class ).list() ;
+        Session session = null ;
+        try {
+            session = SessionFactoryProvider.getSessionFactory().openSession();
+            records = session.createCriteria(Records.class).list();
+        }
+        catch ( HibernateException hex ) {
+            log.error( "Hibernate Exception: " + hex ) ;
+        }
+        catch ( Exception ex ) {
+            log.error( "Exception: " + ex ) ;
+        }
+        if ( session != null ) {
+            session.close() ;
+        }
         return records ;
     }
 
     /**
      * https://github.com/MadJavaEntSpring2017/week1-user-display-exercise/blob/hibernate-demo/src/main/java/edu/matc/persistence/UserDao.java
-     * @param rec
-     * @return
+     * @param rec - records object to commit
+     * @return - unique ID assigned by database
      */
     public int createRecord( Records rec ) {
-        int id = 0;
-        Session session = null;
+        int id = 0 ;
+        Session session = null ;
         try {
             session = SessionFactoryProvider.getSessionFactory().openSession() ;
             Transaction transaction = session.beginTransaction() ;
@@ -75,9 +85,30 @@ public class RecordsDao {
     }
 
 
+    public void updateRecord( Records record ) {
+        Session session = null ;
+        Transaction transaction = null ;
+        try {
+            session = SessionFactoryProvider.getSessionFactory().openSession() ;
+            transaction = session.beginTransaction() ;
+            session.update( record ) ;
+            transaction.commit() ;
+        }
+        catch ( HibernateException hex ) {
+            if ( null != transaction ) {
+                transaction.rollback() ;
+            }
+        }
+        finally {
+            if( null != session ) {
+                session.close();
+            }
+        }
+    }
+
+
     public void deleteRecord( int id ) {
         log.info( "CoffeeDao.deleteUser( " + id + " )" ) ;
-
         Session session = null ;
         Transaction transaction = null ;
         try {

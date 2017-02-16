@@ -23,15 +23,29 @@ public class CoffeeDao {
      */
     public List<Coffee> getAllCoffees() {
         List<Coffee> coffees = new ArrayList<Coffee>() ;
-        Session session = SessionFactoryProvider.getSessionFactory().openSession() ;
-        coffees = session.createCriteria(Coffee.class).list() ;
-        return coffees;
+        Session session = null ;
+        try {
+            session = SessionFactoryProvider.getSessionFactory().openSession() ;
+            coffees = session.createCriteria(Coffee.class).list() ;
+        }
+        catch ( HibernateException hex ) {
+            log.error( "HibernateException: ", hex ) ;
+        }
+        catch ( Exception ex ) {
+            log.error( "Exception: ", ex ) ;
+        }
+        finally {
+            if( null != session ) {
+                session.close() ;
+            }
+        }
+        return coffees ;
     }
 
     /**
      * CREATE - add a new coffee row
      *
-     * @param coffee
+     * @param coffee - coffee description object
      * @return the id of the inserted record
      *
      * REFERENCE: https://www.tutorialspoint.com/hibernate/hibernate_examples.htm
@@ -39,10 +53,10 @@ public class CoffeeDao {
     public int addCoffee( Coffee coffee ) {
         log.info( "CoffeeDao.addCoffee( " + coffee + " )" ) ;
         int id = 0 ;
-
-        Session session = SessionFactoryProvider.getSessionFactory().openSession() ;
+        Session session = null ;
         Transaction transaction = null ;
         try {
+            session = SessionFactoryProvider.getSessionFactory().openSession() ;
             transaction = session.beginTransaction() ;
             id = (int) session.save( coffee ) ;
             transaction.commit() ;
@@ -54,7 +68,9 @@ public class CoffeeDao {
             }
         }
         finally {
-            session.close() ;
+            if( null != session ) {
+                session.close();
+            }
         }
         return id ;
     }
@@ -68,30 +84,32 @@ public class CoffeeDao {
     public Coffee getCoffee( int id ) {
         log.info( "CoffeeDao.getCoffee( " + id + " )" ) ;
         Coffee coffee = null ;
-
-        Session session = SessionFactoryProvider.getSessionFactory().openSession() ;
+        Session session = null ;
         try {
+            session = SessionFactoryProvider.getSessionFactory().openSession() ;
             coffee = (Coffee) session.get( Coffee.class, id ) ;
         }
         catch ( HibernateException hex ) {
             log.error( "Session.save fail:  ", hex ) ;
         }
         finally {
-            session.close() ;
+            if( null != session ) {
+                session.close();
+            }
         }
         return coffee ;
     }
 
     /**
      * UPDATE - Change existing coffee row
-     * @param coffee
+     * @param coffee - coffee description object
      */
     public void updateCoffee( Coffee coffee) {
         log.info( "CoffeeDao.updateUser( " + coffee + " )" ) ;
-
-        Session session = SessionFactoryProvider.getSessionFactory().openSession() ;
+        Session session = null ;
         Transaction transaction = null ;
         try {
+            session = SessionFactoryProvider.getSessionFactory().openSession() ;
             transaction = session.beginTransaction() ;
             session.update(coffee) ;
             transaction.commit() ;
@@ -103,7 +121,9 @@ public class CoffeeDao {
             }
         }
         finally {
-            session.close() ;
+            if( null != session ) {
+                session.close();
+            }
         }
     }
 
@@ -115,10 +135,10 @@ public class CoffeeDao {
      */
     public void deleteCoffee( int id ) {
         log.info( "CoffeeDao.deleteUser( " + id + " )" ) ;
-
-        Session session = SessionFactoryProvider.getSessionFactory().openSession() ;
+        Session session = null ;
         Transaction transaction = null ;
         try {
+            session = SessionFactoryProvider.getSessionFactory().openSession() ;
             transaction = session.beginTransaction() ;
             Coffee coffee = (Coffee) session.get( Coffee.class, id ) ;
             session.delete(coffee) ;
@@ -131,7 +151,9 @@ public class CoffeeDao {
             }
         }
         finally {
-            session.close() ;
+            if( null != session ) {
+                session.close();
+            }
         }
     }
 }

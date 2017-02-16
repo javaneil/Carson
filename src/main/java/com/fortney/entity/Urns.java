@@ -35,16 +35,16 @@ public class Urns {
      * Empty Constructor
      */
     public Urns() {
+        urnID = 0 ; // database to assign next unique key
     }
 
     /**
      * runID getters & setters
-      * @return
+     * @return
      */
     public int getUrnID() {
         return urnID;
     }
-
     public void setUrnID(int urnID) {
         this.urnID = urnID;
     }
@@ -56,7 +56,6 @@ public class Urns {
     public int getInventoryNumber() {
         return inventoryNumber;
     }
-
     public void setInventoryNumber(int inventoryNumber) {
         this.inventoryNumber = inventoryNumber;
     }
@@ -68,7 +67,6 @@ public class Urns {
     public String getBrand() {
         return brand;
     }
-
     public void setBrand(String brand) {
         this.brand = brand;
     }
@@ -80,7 +78,6 @@ public class Urns {
     public String getModel() {
         return model;
     }
-
     public void setModel(String model) {
         this.model = model;
     }
@@ -92,7 +89,6 @@ public class Urns {
     public String getCommissionDate() {
         return commissionDate;
     }
-
     public void setCommissionDate(String commissionDate) {
         this.commissionDate = commissionDate;
     }

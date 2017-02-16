@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
  */
 public class CoffeeDaoTest {
 
-    CoffeeDao dao ;
+    private CoffeeDao dao ;
 
     /**
      * FURTHER REFERENCE: http://codesolid.com/a-simple-hibernate-mysql-and-junit-tutorial/
@@ -27,7 +27,7 @@ public class CoffeeDaoTest {
 
     @Before
     public void setup() {
-        dao = new CoffeeDao();
+        dao = new CoffeeDao() ;
     }
 
     @After
@@ -83,9 +83,9 @@ public class CoffeeDaoTest {
         int id = dao.addCoffee( coffee ) ;
         coffee.setCoffeeName( "Mocha Mud" ); ;
         dao.updateCoffee( coffee ) ;
-        Coffee updUser = dao.getCoffee( id ) ;
-        assertEquals( updUser.getCoffeeName(), "Mocha Mud" ) ;
-        if ( (null != updUser) && (0 < id) ) {
+        Coffee updCoffee = dao.getCoffee( id ) ;
+        assertEquals( updCoffee.getCoffeeName(), "Mocha Mud" ) ;
+        if ( (null != updCoffee) && (0 < id) ) {
             dao.deleteCoffee( id ) ;
         }
     }
@@ -106,7 +106,7 @@ public class CoffeeDaoTest {
      * Utilities
      */
     private Coffee testCoffeeObj() {
-        Coffee retObj = new Coffee(0, "Yuckban", "A truely disgusting cup of mud",
+        Coffee retObj = new Coffee("Yuckban", "A truely disgusting cup of mud",
                 "Queequegs", "123 Oak Street", "Seattle", "WA", "98101",
                 "1 800 555 1212" ) ;
         return retObj;
