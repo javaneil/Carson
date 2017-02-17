@@ -35,8 +35,8 @@
 |                |  | 3 | Ride bike to Bellville |
 | Tu 14-Feb-2017 | Prepare Carson project for deploy, unable to connect to AWS.  Had to edit AWS Security Group Inbound Source IP.  | 2 | Restarting home DSL re-assigned gateway IP address. |
 |                | Sandi EC feedback.  Successfully deploy CarsonWebApp to AWS. | 2 | Not sure how to configure logging on AWS |
-| We 15-Feb-2017 |  |  |  |
-| Th 16-Feb-2017 |  |  |  |
+| We 15-Feb-2017 | Successfully deployed Carson project to AWS.  Began adding some JSPs and actions | 4 | Forgot everything I ever knew about JSP... |
+| Th 16-Feb-2017 | Finally got a button on the home page to display the contents of the Coffee table | 3 | Had to re-learn how to add JSTL to Maven |
 | Fr 17-Feb-2017 |  |  |  |
 | Sa 18-Feb-2017 |  |  |  |
 | Su 19-Feb-2017 |  |  |  |

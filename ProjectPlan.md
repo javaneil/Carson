@@ -9,21 +9,21 @@
 ### Week 2
 - [X] Complete Problem Statement
 - [X] Begin screen design (OpenOffice Draw)
-- [X] Begin project plan 
+- [X] Begin project plan
 - [X] Time log entries
 
 ### Week 3
 - [ ] Complete screen design (OpenOffice Draw)
 - [ ] Complete database design
-- [ ] Create class diagram
+- [X] Create class diagram
 - [ ] Determine independent research topic
-- [ ] Time log entries
+- [X] Time log entries
 
 ### Week 4
-- [ ] Add Maven for building
-- [ ] Begin creating JSPs
-- [ ] Set up logging
-- [ ] Set up unit testing
+- [X] Add Maven for building
+- [X] Begin creating JSPs
+- [X] Set up logging
+- [X] Set up unit testing
 - [ ] Determine possible Web Services or APIs to use
 - [ ] Revise Project Plan based on project design to date.
 - [ ] Time log entries
@@ -76,10 +76,3 @@
 
 ### Week 16
 - [ ] Time log entries
-
-
-
-
-
-
-

@@ -14,7 +14,7 @@
         <br />
         <br />
         <input type="text" name="findString" value="Kona">
-        <input type="submit" value="Find">
+        <input type="submit" name="submit" value="Find">
     </form>
 
 </div>
