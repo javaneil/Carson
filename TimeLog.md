@@ -37,8 +37,9 @@
 |                | Sandi EC feedback.  Successfully deploy CarsonWebApp to AWS. | 2 | Not sure how to configure logging on AWS |
 | We 15-Feb-2017 | Successfully deployed Carson project to AWS.  Began adding some JSPs and actions | 4 | Forgot everything I ever knew about JSP... |
 | Th 16-Feb-2017 | Finally got a button on the home page to display the contents of the Coffee table | 3 | Had to re-learn how to add JSTL to Maven |
-| Fr 17-Feb-2017 |  |  |  |
-| Sa 18-Feb-2017 |  |  |  |
+| Fr 17-Feb-2017 | Spent all day getting week5 demo to work.  Looks like the main problem was the MySQL GRANT wasn't taking effect.  Secondary problem was the demo was created using a DB with slightly different table values... | 6 | Always follow changes to MySQL with FLUSH PRIVILEGES? |
+|                | Also implemented changes to week-5-exercise, but apparently had the same DB connection problem as the demo | 3 | |
+| Sa 18-Feb-2017 | Added second constraint to week-5-exercise.  Throws 403 if logged-in as registeredUser and try to go to admin page. | 2 | Need to handle invalid page?  |
 | Su 19-Feb-2017 |  |  |  |
 | Mo 20-Feb-2017 |  |  |  |
 | Tu 21-Feb-2017 |  |  |  |
