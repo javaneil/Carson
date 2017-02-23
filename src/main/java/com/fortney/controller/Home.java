@@ -40,6 +40,7 @@ public class Home extends HttpServlet {
         else if ( req.getParameter( "submit" ).equals( "setup1" ) ) {
             log.info( "Setup1" ) ;
 //            req.setAttribute( "users", userData.getAllUsers() ) ;
+            dispatcher = req.getRequestDispatcher("/admin.jsp" ) ;
         }
         else if ( req.getParameter( "submit" ).equals( "setup2" ) ) {
             log.info( "Setup2" ) ;

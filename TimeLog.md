@@ -43,11 +43,11 @@
 |                |  | 4 | Ride bike to Black Earth |
 | Su 19-Feb-2017 | Review some of week-5 lectures, preview some of week-6 and install SoapUI | 2 | (prepare taxes, but that's off topic...) |
 | Mo 20-Feb-2017 | Week-6 reading & videos.  Activities 1 & 2. | 4 |  |
-| Tu 21-Feb-2017 |  |  |  |
-| We 22-Feb-2017 |  |  |  |
+| Tu 21-Feb-2017 | Week-6 reading & videos. Activity 3. | 3 |  |
+| We 22-Feb-2017 | Create single MySQL script to Create DB & tables, also fill tables with simulated data from .csv files | 4 | I had been simply using MySQL Workbench's import wizard to fill tables with sample data.  The script now uses MySQL statements. |
+|                | Adding authentication to Carson project & database | 2 | |
 | Th 23-Feb-2017 |  |  |  |
 | Fr 24-Feb-2017 |  |  |  |
-
 | Sa 25-Feb-2017 |  |  |  |
 | Su 26-Feb-2017 |  |  |  |
 | Mo 27-Feb-2017 |  |  |  |
