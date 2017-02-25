@@ -46,8 +46,8 @@
 | Tu 21-Feb-2017 | Week-6 reading & videos. Activity 3. | 3 |  |
 | We 22-Feb-2017 | Create single MySQL script to Create DB & tables, also fill tables with simulated data from .csv files | 4 | I had been simply using MySQL Workbench's import wizard to fill tables with sample data.  The script now uses MySQL statements. |
 |                | Adding authentication to Carson project & database | 2 | |
-| Th 23-Feb-2017 |  |  |  |
-| Fr 24-Feb-2017 |  |  |  |
+| Th 23-Feb-2017 | Got authentication working with Servlets on Carson.  Pushed Week-6 Activities 2 & 3 to new repos on my github. | 3 | Ran into issue git, could not pull from repos until current branch was manually set to master?  |
+| Fr 24-Feb-2017 | Edit & push Leja feedback.  Installed Oracle Java8 on Dell PC.  Installed TomEE (from .tar.gs?).  Got it to where I can remote into the TomEE Manager App and deployed Example1 successfully. | 6 | Haven't been able to remote-in with MySQL Workbench yet... Going to need SSH keys? |
 | Sa 25-Feb-2017 |  |  |  |
 | Su 26-Feb-2017 |  |  |  |
 | Mo 27-Feb-2017 |  |  |  |

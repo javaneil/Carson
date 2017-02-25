@@ -12,6 +12,7 @@
     </web-resource-collection>
     <auth-constraint>
       <role-name>administrator</role-name>
+      <role-name>employee</role-name>
     </auth-constraint>
   </security-constraint>
 
@@ -21,10 +22,22 @@
       <url-pattern>/emp.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
+      <role-name>employee</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <!-- 2017-02-23nkf - require authentication on "/admin" @WebServlet -->
+  <security-constraint id="home">
+    <web-resource-collection>
+      <web-resource-name>Admin</web-resource-name>
+      <url-pattern>/admin</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
       <role-name>administrator</role-name>
       <role-name>employee</role-name>
     </auth-constraint>
   </security-constraint>
+
 
   <security-role>
     <role-name>administrator</role-name>
