@@ -48,6 +48,8 @@
 |                | Adding authentication to Carson project & database | 2 | |
 | Th 23-Feb-2017 | Got authentication working with Servlets on Carson.  Pushed Week-6 Activities 2 & 3 to new repos on my github. | 3 | Ran into issue git, could not pull from repos until current branch was manually set to master?  |
 | Fr 24-Feb-2017 | Edit & push Leja feedback.  Installed Oracle Java8 on Dell PC.  Installed TomEE (from .tar.gs?).  Got it to where I can remote into the TomEE Manager App and deployed Example1 successfully. | 6 | Haven't been able to remote-in with MySQL Workbench yet... Going to need SSH keys? |
-| Sa 25-Feb-2017 |  |  |  |
+| Sa 25-Feb-2017 | Relocated Tomcat Realm .xml to IntelliJ as discussed on Slack.  Tested successfully on local with two projects (week5 & Carson) using different databases. | 2 | |
+|                | Used MySQL terminal on Dell Ubuntu to create authentication DB & default tables.  Installed & copied mysql-connector-java-5.1.38.jar.  Able to deploy & execute week5 Example. | 3 | Didn't need to generate SSH keys to use MySQL Workbench remote on Dell, but must login each time... |
+|                | Replicated above steps on ASW instance & successfully test week5 exercise.  Deploy & successfully (functional) test Carson project on AWS | 2 | Ended up using MySQL Workbench Import to initialize Carson DB table data on AWS. |
 | Su 26-Feb-2017 |  |  |  |
 | Mo 27-Feb-2017 |  |  |  |

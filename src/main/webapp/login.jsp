@@ -18,5 +18,7 @@
         <TR><TH><INPUT TYPE="SUBMIT" VALUE="Log In">
     </TABLE>
 </FORM>
+<p>Login as admin admin for either Administrator or Employee buttons</p>
+<p>Login as emp emp only for Employee button</p>
 </body>
 </html>
