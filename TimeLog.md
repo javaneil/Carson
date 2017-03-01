@@ -51,5 +51,15 @@
 | Sa 25-Feb-2017 | Relocated Tomcat Realm .xml to IntelliJ as discussed on Slack.  Tested successfully on local with two projects (week5 & Carson) using different databases. | 2 | |
 |                | Used MySQL terminal on Dell Ubuntu to create authentication DB & default tables.  Installed & copied mysql-connector-java-5.1.38.jar.  Able to deploy & execute week5 Example. | 3 | Didn't need to generate SSH keys to use MySQL Workbench remote on Dell, but must login each time... |
 |                | Replicated above steps on ASW instance & successfully test week5 exercise.  Deploy & successfully (functional) test Carson project on AWS | 2 | Ended up using MySQL Workbench Import to initialize Carson DB table data on AWS. |
-| Su 26-Feb-2017 |  |  |  |
-| Mo 27-Feb-2017 |  |  |  |
+| Su 26-Feb-2017 | WiFi was not working on my Dell Ubuntu machine, so spent the morning installing additional drivers and somehow it began working | 2 |  |
+|                | Spent the rest of the day installing the latest Raspbian(linux), Oracle Java-8 JDK and TomEE on a Raspberry Pi B+.  TomEE is accessible from a browser, but the Manager App throws a 403 without even prompting for login... | 6 | Need to review class setup steps, think I may have missed something |
+| Mo 27-Feb-2017 | Week7 reading & video.  Hung-up on Activity-1, SoapUI Outline tab not visible. | 2 | Need to use SoapUI Pro? |
+|                | Created Activity-2 IntelliJ project, test throws error (as expected), but error does contain retrieved JSON | 1 |  |
+| Tu 28-Feb-2017 | Read/view week-7 materials.  Carson Project does not consistantly display Coffee page.  Had Hibernate using MySQL root loging, and TomEE was using tomee.  Have no idea if that had anything to do with anything, but fixed it anyhow.  Not able to reporduce... | 3 | Ran into some log4j issues, wasn't using catalina.home path.  Also discovered an actual logging event must occur before the output log file gets created! |
+| We 01-Mar-2017 |  |  |  |
+| Th 02-Mar-2017 |  |  |  |
+| Fr 03-Mar-2017 |  |  |  |
+| Sa 04-Mar-2017 |  |  |  |
+| Su 05-Mar-2017 |  |  |  |
+| Mo 06-Mar-2017 |  |  |  |
+| Tu 07-Mar-2017 |  |  |  |
