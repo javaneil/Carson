@@ -58,9 +58,9 @@
 | Tu 28-Feb-2017 | Read/view week-7 materials.  Carson Project does not consistantly display Coffee page.  Had Hibernate using MySQL root loging, and TomEE was using tomee.  Have no idea if that had anything to do with anything, but fixed it anyhow.  Not able to reporduce... | 3 | Ran into some log4j issues, wasn't using catalina.home path.  Also discovered an actual logging event must occur before the output log file gets created! |
 | We 01-Mar-2017 | Lucas & Brandon feedback.  Activity-3 & Activity-4 (as far as HelloWorld and single parameter). | 3 | Need to do xml & JSON. |
 |                | Raspberry Pi TomEE was missing edit to context.xml blocking Manager App.  Installed MySQL, though Raspbian defaults to version 5.5.   Can deploy Carson project and display simple table, but Foreign Keys arn't working. | 3 | Had to install & copy mysql-connector-java to get authenticaton to work.  May try manually installing MySQL 5.7 to see if resolves Key issue. |
-| Th 02-Mar-2017 |  |  |  |
-| Fr 03-Mar-2017 |  |  |  |
-| Sa 04-Mar-2017 |  |  |  |
-| Su 05-Mar-2017 |  |  |  |
+| Th 02-Mar-2017 | Started on Activity-3, can pass parameter, but not sure how to generate JSON | 3 |  |
+| Fr 03-Mar-2017 | Activity-3, faked HTML and have jackson converting POJO object list to string.  Can see it on browser, but SoapUI doesn't recongize it as JSON | 4 | Created repositories and pushed Activities 2, 3 & 4 |
+| Sa 04-Mar-2017 | Raspberry Pi day...  It appears Raspbian(Debian) only supports MySQL 5.5 at this time.  I've been all over the internet and found numerous installations of 5.7 on Debian, but only for x86 platforms.  The install error I'm getting is looking for an ARM specific file that Oracle/MySQL is missing | 6 | I need to find a better hobby/passtime |
+| Su 05-Mar-2017 | Tried installing MysQL 5.6 over 5.5 on Raspbian, same missing file issue.  After a failed MySQL install, don't know the state of things, so I usually flash a new Raspbian image and start over... | 1 | Getting really good at manually installing the LAMJ (J for java) environment |
 | Mo 06-Mar-2017 |  |  |  |
 | Tu 07-Mar-2017 |  |  |  |
