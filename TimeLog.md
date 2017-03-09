@@ -63,5 +63,10 @@
 | Sa 04-Mar-2017 | Raspberry Pi day...  It appears Raspbian(Debian) only supports MySQL 5.5 at this time.  I've been all over the internet and found numerous installations of 5.7 on Debian, but only for x86 platforms.  The install error I'm getting is looking for an ARM specific file that Oracle/MySQL is missing | 6 | I need to find a better hobby/passtime |
 | Su 05-Mar-2017 | Tried installing MysQL 5.6 over 5.5 on Raspbian, same missing file issue.  After a failed MySQL install, don't know the state of things, so I usually flash a new Raspbian image and start over... | 1 | Getting really good at manually installing the LAMJ (J for java) environment |
 | Mo 06-Mar-2017 | Finally (this time for sure?) I got Week7 Actvity-3 to work with SoapUI.  Had to add @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML}) above the Hello class to get the right Content-Type. | 6 |  |
-| Tu 07-Mar-2017 |  |  |  |
-| We 08-Mar-2017 |  |  |  |
+| Tu 07-Mar-2017 | Went down Raspberry Pi rabbit-hole exploring backing-up/cloning of installed Raspbian image.  Also researching accessing GPIO from Java. | 3 | Mixing and resizing of SD-Cards has been an issue with RasPi for some time now requiring lots of potentially dangerous command-line "dd" operations |
+| We 08-Mar-2017 | Week7 Exercise, DAO and basic junit test.  Basic web service, able to retrieve MySQL data, but need to convert raw data to JSON. | 5 | Unscheduled overnight visitor in form of 3-year-old Grandson - much distraction... |
+| Th 09-Mar-2017 |  |  |  |
+| Fr 10-Mar-2017 |  |  |  |
+| Sa 11-Mar-2017 |  |  |  |
+| Su 12-Mar-2017 |  |  |  |
+| Mo 13-Mar-2017 |  |  |  |
