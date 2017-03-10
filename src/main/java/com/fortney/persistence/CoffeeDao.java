@@ -90,7 +90,7 @@ public class CoffeeDao {
             coffee = (Coffee) session.get( Coffee.class, id ) ;
         }
         catch ( HibernateException hex ) {
-            log.error( "Session.save fail:  ", hex ) ;
+            log.error( "Session.get fail:  ", hex ) ;
         }
         finally {
             if( null != session ) {
@@ -115,7 +115,7 @@ public class CoffeeDao {
             transaction.commit() ;
         }
         catch ( HibernateException hex ) {
-            log.error( "Session.save fail:  ", hex ) ;
+            log.error( "Session.beginTransaction fail:  ", hex ) ;
             if ( null != transaction ) {
                 transaction.rollback() ;
             }
