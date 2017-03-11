@@ -65,8 +65,9 @@
 | Mo 06-Mar-2017 | Finally (this time for sure?) I got Week7 Actvity-3 to work with SoapUI.  Had to add @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML}) above the Hello class to get the right Content-Type. | 6 |  |
 | Tu 07-Mar-2017 | Went down Raspberry Pi rabbit-hole exploring backing-up/cloning of installed Raspbian image.  Also researching accessing GPIO from Java. | 3 | Mixing and resizing of SD-Cards has been an issue with RasPi for some time now requiring lots of potentially dangerous command-line "dd" operations |
 | We 08-Mar-2017 | Week7 Exercise, DAO and basic junit test.  Basic web service, able to retrieve MySQL data, but need to convert raw data to JSON. | 5 | Unscheduled overnight visitor in form of 3-year-old Grandson - much distraction... |
-| Th 09-Mar-2017 |  |  |  |
-| Fr 10-Mar-2017 |  |  |  |
-| Sa 11-Mar-2017 |  |  |  |
+| Th 09-Mar-2017 | Think I have the @GET responding with JSON correctly, began adding @PUT annotations to Week7 exercise.  | 2 | Still have Grandson around - how did I ever get anything done when I had my own children around 24/7 ??? |
+| Fr 10-Mar-2017 | Got @PUT annotations sort-of working, still a little fuzzy on the data formatting.  Started adding @POSTs, see if that makes more sense.  Enable USB WiFi on RasPi with GUI. | 4 | Having some trouble with an SD-Card not being recoginized by Ubuntu, had to use GUI on RasPi to resize |
+|                | Cloned group project from rep Shea created, the repository is missing a .gitignore, so it's kind of big.  I added .gitignore to my loco repo and removed /target/ from my cache as per the class video.  The .gitignore is in a different file locatation than the example and I'm not sure how it handles the filepaths. | 1 | I'm reluctant to push my revised repo because I don't want to clobber the group repo... |
+| Sa 11-Mar-2017 | Presentations feedback. | 1 |  |
 | Su 12-Mar-2017 |  |  |  |
 | Mo 13-Mar-2017 |  |  |  |
