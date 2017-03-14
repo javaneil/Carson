@@ -16,7 +16,7 @@ import javax.persistence.* ;
 
 @Entity
 @Table( name = "records" )
-public class Records {
+public class Record {
 
     @Id
     @GeneratedValue
@@ -46,13 +46,13 @@ public class Records {
     /**
      * Empty Constructor
      */
-    public Records() {
+    public Record() {
         recordID = 0 ;
         Logger log = Logger.getLogger( this.getClass() ) ;
-        log.info( "Records Constructor" ) ;
+        log.info( "Record Constructor" ) ;
     }
 
-    public Records( String currentLoc, String startDateTime ) {
+    public Record(String currentLoc, String startDateTime ) {
         recordID = 0 ; // database to assign next unique key
         urnID = new Urns() ;
         coffeeID = new Coffee() ;

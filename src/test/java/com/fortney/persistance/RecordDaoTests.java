@@ -1,14 +1,11 @@
 package com.fortney.persistance ;
 
-import com.fortney.entity.Coffee;
-import com.fortney.entity.Records ;
-import com.fortney.entity.Urns;
-import com.fortney.persistence.RecordsDao ;
+import com.fortney.entity.Record;
+import com.fortney.persistence.RecordDao;
 import org.junit.After ;
 import org.junit.Before ;
 import org.junit.Test ;
 
-import java.time.LocalDate ;
 import java.util.List ;
 
 import static org.junit.Assert.* ;
@@ -16,9 +13,9 @@ import static org.junit.Assert.* ;
 /**
  * Created by Neil on 2/8/2017.
  */
-public class RecordsDaoTest {
+public class RecordDaoTests {
 
-    private RecordsDao dao;
+    private RecordDao dao;
 
     /**
      * REFERENCE: http://codesolid.com/a-simple-hibernate-mysql-and-junit-tutorial/
@@ -26,7 +23,7 @@ public class RecordsDaoTest {
 
     @Before
     public void setup() {
-        dao = new RecordsDao() ;
+        dao = new RecordDao() ;
     }
 
     @After
@@ -41,7 +38,7 @@ public class RecordsDaoTest {
      */
     @Test
     public void getAllRecords() throws Exception {
-        List<Records> records = dao.getAllRecords() ;
+        List<Record> records = dao.getAllRecords() ;
         assertTrue(records.size() > 0 ) ;
     }
 
@@ -56,11 +53,11 @@ public class RecordsDaoTest {
 
     @Test
     public void updateRecord() throws Exception {
-        Records rec = testRecordObj() ;
+        Record rec = testRecordObj() ;
         int id = dao.createRecord( rec ) ;
         rec.setCurrentLocation( "Back Counter" ) ; ;
         dao.updateRecord( rec ) ;
-        Records updRecord = dao.retrieveRecord( id ) ;
+        Record updRecord = dao.retrieveRecord( id ) ;
         assertEquals( updRecord.getCurrentLocation(), "Back Counter" ) ;
         if ( (null != updRecord) && (0 < id) ) {
             dao.deleteRecord( id ) ;
@@ -73,13 +70,13 @@ public class RecordsDaoTest {
         int id = dao.createRecord( testRecordObj() ) ;
         assertNotNull( id ) ;
         dao.deleteRecord( id ) ;
-        Records delRec = dao.retrieveRecord( id ) ;
+        Record delRec = dao.retrieveRecord( id ) ;
         assertNull( delRec ) ;
     }
 
 
-    private Records testRecordObj() {
-        Records retObj = new Records("Front Counter", "2017-02-05 12:00:00" ) ;
+    private Record testRecordObj() {
+        Record retObj = new Record("Front Counter", "2017-02-05 12:00:00" ) ;
         return retObj;
     }
 }

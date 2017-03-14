@@ -49,7 +49,7 @@ public class Home extends HttpServlet {
         }
         else if ( req.getParameter( "submit" ).equals( "coffees" ) ) {
             log.info( "Coffees" ) ;
-            req.setAttribute( "coffeeList", coffee.getAllCoffees() ) ;
+            req.setAttribute( "coffeeList", coffee.retrieveAllCoffees() ) ;
             dispatcher = req.getRequestDispatcher("/coffees.jsp" ) ;
         }
 

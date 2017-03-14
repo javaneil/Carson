@@ -1,5 +1,6 @@
 package com.fortney.entity;
 
+import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fortney.util.LocalDateAttributeConverter;
 import org.apache.log4j.Logger;
 import org.hibernate.annotations.GenericGenerator;
@@ -136,13 +137,4 @@ public class Coffee {
     public void setVendorPhone(String vendorPhone) {
         this.vendorPhone = vendorPhone;
     }
-
-/*
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
-    }
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-*/
 }

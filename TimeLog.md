@@ -69,5 +69,8 @@
 | Fr 10-Mar-2017 | Got @PUT annotations sort-of working, still a little fuzzy on the data formatting.  Started adding @POSTs, see if that makes more sense.  Enable USB WiFi on RasPi with GUI. | 4 | Having some trouble with an SD-Card not being recoginized by Ubuntu, had to use GUI on RasPi to resize |
 |                | Cloned group project from rep Shea created, the repository is missing a .gitignore, so it's kind of big.  I added .gitignore to my loco repo and removed /target/ from my cache as per the class video.  The .gitignore is in a different file locatation than the example and I'm not sure how it handles the filepaths. | 1 | I'm reluctant to push my revised repo because I don't want to clobber the group repo... |
 | Sa 11-Mar-2017 | Presentations feedback. | 1 |  |
+|                | Got @POSTs working with on Week7 exercise, including an attached JSON message |  | Need to review MySQL permissions, who has Write access? |
 | Su 12-Mar-2017 |  |  |  |
-| Mo 13-Mar-2017 |  |  |  |
+| Mo 13-Mar-2017 | Added Junit DAO tests which initially failed because Hibernate only had MySQL SELECT permission.  Added Jersey & Jackson to Carson project and got simple @GETs retrieving DB data using DAOs.  | 6 | Had a lot of trouble getting the JSON parsing to work... Root Object Name was not being included on service end & I initially wasn't configuring RoboPojoGen corectly  |
+| Tu 14-Mar-2017 |  |  |  |
+| We 15-Mar-2017 |  |  |  |

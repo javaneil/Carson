@@ -21,7 +21,7 @@ public class CoffeeDao {
      *
      * @return All coffees
      */
-    public List<Coffee> getAllCoffees() {
+    public List<Coffee> retrieveAllCoffees() {
         List<Coffee> coffees = new ArrayList<Coffee>() ;
         Session session = null ;
         try {
@@ -44,14 +44,15 @@ public class CoffeeDao {
 
     /**
      * CREATE - add a new coffee row
+     * Note: Hibernate must have MySQL write/update permission
      *
      * @param coffee - coffee description object
      * @return the id of the inserted record
      *
      * REFERENCE: https://www.tutorialspoint.com/hibernate/hibernate_examples.htm
      */
-    public int addCoffee( Coffee coffee ) {
-        log.info( "CoffeeDao.addCoffee( " + coffee + " )" ) ;
+    public int createCoffee( Coffee coffee ) {
+        log.info( "CoffeeDao.createCoffee( " + coffee + " )" ) ;
         int id = 0 ;
         Session session = null ;
         Transaction transaction = null ;
@@ -81,8 +82,8 @@ public class CoffeeDao {
      * @param id the coffee's id
      * @return coffee object
      */
-    public Coffee getCoffee( int id ) {
-        log.info( "CoffeeDao.getCoffee( " + id + " )" ) ;
+    public Coffee retrieveCoffee( int id ) {
+        log.info( "CoffeeDao.retrieveCoffee( " + id + " )" ) ;
         Coffee coffee = null ;
         Session session = null ;
         try {
@@ -104,8 +105,9 @@ public class CoffeeDao {
      * UPDATE - Change existing coffee row
      * @param coffee - coffee description object
      */
-    public void updateCoffee( Coffee coffee) {
+    public Boolean updateCoffee( Coffee coffee) {
         log.info( "CoffeeDao.updateUser( " + coffee + " )" ) ;
+        Boolean retVal = false ;
         Session session = null ;
         Transaction transaction = null ;
         try {
@@ -122,9 +124,11 @@ public class CoffeeDao {
         }
         finally {
             if( null != session ) {
-                session.close();
+                session.close() ;
+                retVal = true ;
             }
         }
+        return retVal ;
     }
 
     /**
@@ -133,8 +137,9 @@ public class CoffeeDao {
      *
      * REFERENCE: https://www.tutorialspoint.com/hibernate/hibernate_examples.htm
      */
-    public void deleteCoffee( int id ) {
+    public Boolean deleteCoffee( int id ) {
         log.info( "CoffeeDao.deleteUser( " + id + " )" ) ;
+        Boolean retVal = false ;
         Session session = null ;
         Transaction transaction = null ;
         try {
@@ -152,8 +157,10 @@ public class CoffeeDao {
         }
         finally {
             if( null != session ) {
-                session.close();
+                session.close() ;
+                retVal = true ;
             }
         }
+        return retVal ;
     }
 }

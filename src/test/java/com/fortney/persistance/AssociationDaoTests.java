@@ -1,7 +1,7 @@
 package com.fortney.persistance;
 
-import com.fortney.entity.Records ;
-import com.fortney.persistence.RecordsDao ;
+import com.fortney.entity.Record;
+import com.fortney.persistence.RecordDao;
 import org.apache.log4j.Logger;
 import org.junit.After ;
 import org.junit.Before ;
@@ -17,7 +17,7 @@ import static org.junit.Assert.* ;
  */
 public class AssociationDaoTests {
 
-    private RecordsDao dao ;
+    private RecordDao dao ;
 
     /**
      * REFERENCES: http://codesolid.com/a-simple-hibernate-mysql-and-junit-tutorial/
@@ -27,7 +27,7 @@ public class AssociationDaoTests {
 
     @Before
     public void setup() {
-        dao = new RecordsDao();
+        dao = new RecordDao();
     }
 
     @After
@@ -41,13 +41,13 @@ public class AssociationDaoTests {
      */
     @Test
     public void getAllRecords() throws Exception {
-        List<Records> records = dao.getAllRecords() ;
+        List<Record> records = dao.getAllRecords() ;
         Logger log = Logger.getLogger( this.getClass() ) ;
         log.info( "getAllRecords() " + records.size() ) ;
         assertTrue(records.size() > 0 ) ;
 
         //TODO verify reads from associated tables
-        for ( Records rec : records ) {
+        for ( Record rec : records ) {
             log.info( rec.getUrnID().getBrand() +
                     "  " +  rec.getCoffeeID().getCoffeeName() +
                     "  " + rec.getCurrentLocation() ) ;
