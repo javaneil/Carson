@@ -72,5 +72,18 @@
 |                | Got @POSTs working with on Week7 exercise, including an attached JSON message |  | Need to review MySQL permissions, who has Write access? |
 | Su 12-Mar-2017 |  |  |  |
 | Mo 13-Mar-2017 | Added Junit DAO tests which initially failed because Hibernate only had MySQL SELECT permission.  Added Jersey & Jackson to Carson project and got simple @GETs retrieving DB data using DAOs.  | 6 | Had a lot of trouble getting the JSON parsing to work... Root Object Name was not being included on service end & I initially wasn't configuring RoboPojoGen corectly  |
-| Tu 14-Mar-2017 |  |  |  |
-| We 15-Mar-2017 |  |  |  |
+| Tu 14-Mar-2017 | Spent all day getting @POST web services working on Carson project.  Using Junit test as Client to post new coffees to the Coffee entity.  DAO commits to MySQL do not appear to take effect immediately.  Even after inserting a supposed 5-second delay, Junit DAO accesses of the DB do not reflect the changes.  Need to run Client in its own instance? | 9 | Jersey developers, in their infinite-wisdom, decided to rename Response.getEntity() to Response.readEntity() in version 2.x.  Unfortunately, even fairly recent examples posted use v1.x getEntity - spent a couple hours on this alone... |
+| We 15-Mar-2017 | Cloning review projects to local for analysis. |  | Maybe its just this POS Atom editor, but I'm finding editing .md files more frustrating then the line-editors of 30+ years ago... |
+| Th 16-Mar-2017 |  |  |  |
+| Fr 17-Mar-2017 |  |  |  |
+| Sa 18-Mar-2017 |  |  |  |
+| Su 19-Mar-2017 |  |  |  |
+| Mo 20-Mar-2017 |  |  |  |
+| Tu 21-Mar-2017 |  |  |  |
+| We 22-Mar-2017 |  |  |  |
+| Th 23-Mar-2017 |  |  |  |
+| Fr 24-Mar-2017 |  |  |  |
+| Sa 25-Mar-2017 |  |  |  |
+| Su 26-Mar-2017 |  |  |  |
+| Mo 27-Mar-2017 |  |  |  |
+| Tu 28-Mar-2017 |  |  |  |

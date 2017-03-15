@@ -1,5 +1,6 @@
 package com.fortney.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fortney.util.LocalDateAttributeConverter;
 import org.apache.log4j.Logger;
@@ -7,6 +8,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * A class to represent a coffee.
@@ -17,7 +19,6 @@ import java.time.LocalDate;
 @Entity
 @Table( name = "coffee" )
 public class Coffee {
-    // Note: a LocalDate converter has been provided in the util package you will need it
 
     @Id
     @GeneratedValue( generator = "increment" )

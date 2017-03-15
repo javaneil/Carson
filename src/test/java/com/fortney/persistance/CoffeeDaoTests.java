@@ -2,7 +2,7 @@ package com.fortney.persistance;
 
 import com.fortney.entity.Coffee;
 import com.fortney.persistence.CoffeeDao;
-import static com.fortney.util.TestCommon.testCoffeeObj;
+import static com.fortney.util.TestCommon.testCoffeeObj1;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -52,7 +52,7 @@ public class CoffeeDaoTests {
     @Test
     public void addCoffee() throws Exception {
         int size = dao.retrieveAllCoffees().size() ;
-        int id = dao.createCoffee( testCoffeeObj() ) ;
+        int id = dao.createCoffee( testCoffeeObj1() ) ;
         assertEquals( size + 1, dao.retrieveAllCoffees().size() ) ;
         assertTrue( 0 < id ) ;
         dao.deleteCoffee( id ) ;
@@ -66,7 +66,7 @@ public class CoffeeDaoTests {
     @Test
     public void getUser() throws Exception {
         int size = dao.retrieveAllCoffees().size() ;
-        int id = dao.createCoffee( testCoffeeObj() ) ;
+        int id = dao.createCoffee( testCoffeeObj1() ) ;
         assertTrue( 0 < id ) ;
         Coffee retCoffee = dao.retrieveCoffee( id ) ;
         assertNotNull( retCoffee ) ;
@@ -82,7 +82,7 @@ public class CoffeeDaoTests {
     @Test
     public void updateUser() throws Exception {
         int size = dao.retrieveAllCoffees().size() ;
-        Coffee coffee = testCoffeeObj() ;
+        Coffee coffee = testCoffeeObj1() ;
         int id = dao.createCoffee( coffee ) ;
         assertTrue( 0 < id ) ;
         assertEquals( size + 1, dao.retrieveAllCoffees().size() ) ;
@@ -101,7 +101,7 @@ public class CoffeeDaoTests {
     @Test
     public void deleteCoffee() throws Exception {
         int size = dao.retrieveAllCoffees().size() ;
-        int id = dao.createCoffee( testCoffeeObj() ) ;
+        int id = dao.createCoffee( testCoffeeObj1() ) ;
         assertTrue( 0 < id ) ;
         assertEquals( size + 1, dao.retrieveAllCoffees().size() ) ;
         dao.deleteCoffee( id ) ;

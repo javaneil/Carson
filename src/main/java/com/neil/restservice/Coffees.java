@@ -15,13 +15,14 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by Neil on 3/13/2017.
  */
-@Path( "/" )
-@Produces( {MediaType.TEXT_HTML, MediaType.APPLICATION_JSON} )
+@Path( "/coffees" )
+@Produces( {MediaType.TEXT_PLAIN, MediaType.TEXT_HTML, MediaType.APPLICATION_JSON} )
 @Consumes( {MediaType.TEXT_PLAIN, MediaType.TEXT_HTML, MediaType.APPLICATION_JSON} )
 
 public class Coffees {
@@ -38,7 +39,6 @@ public class Coffees {
         CoffeeDao dao = new CoffeeDao() ;
         String output = "<html><h2>Returning All</h2>" ;
         List<Coffee> coffees = dao.retrieveAllCoffees() ;
-
         for ( Coffee coffee : coffees ) {
             output += convertToHtmlText( coffee ) + "<br />" ;
         }
@@ -52,7 +52,6 @@ public class Coffees {
     public Response returnUser( @PathParam( "id" ) String id ) {
         CoffeeDao dao = new CoffeeDao() ;
         String output = "<html><h1>Return by ID</h1>" ;
-
         Coffee coffee = dao.retrieveCoffee( Integer.valueOf( id ) ) ;
         output += convertToHtmlText( coffee ) ;
         output += "</html>" ;
@@ -64,10 +63,9 @@ public class Coffees {
     @Produces( MediaType.APPLICATION_JSON )
     public Response returnAllJson() {
         CoffeeDao dao = new CoffeeDao() ;
-        String output = "" ;
         List<Coffee> coffees = dao.retrieveAllCoffees() ;
-        output = convertToJson( coffees ) ;
-        return Response.status(200).entity(output).build() ;
+        String output = convertToJson( coffees ) ;
+        return Response.status(200).entity(output).build();
     }
 
     @GET
@@ -75,12 +73,40 @@ public class Coffees {
     @Produces( MediaType.APPLICATION_JSON )
     public Response returnUserJson( @PathParam( "id" ) String id ) {
         CoffeeDao dao = new CoffeeDao() ;
-        List<Coffee> users = new ArrayList<>() ;
-        String output = "" ;
-
-        users.add( dao.retrieveCoffee( Integer.valueOf( id ) ) ) ;
-        output = convertToJson( users ) ;
+        List<Coffee> coffees = new ArrayList<>() ;
+        coffees.add( dao.retrieveCoffee( Integer.valueOf( id ) ) ) ;
+        String output = convertToJson( coffees ) ;
         return Response.status( 200).entity(output).build() ;
+    }
+
+
+    /** **********************************************************************
+     * @POST
+     * References:
+     *     https://jersey.java.net/documentation/latest/client.html
+     *     http://howtodoinjava.com/jersey/jersey-restful-client-examples/
+     */
+    @POST
+    @Path( "/" )
+    public void testPOST() {
+        log.info( "@POST received" ) ;
+    }
+
+    @POST
+    @Path( "/html" )
+    @Consumes( MediaType.TEXT_HTML )
+    public Response postCoffeeHtml() {
+        log.info( "@POST /html" ) ;
+        return Response.status( 200).entity( "@POST postCoffeeHtml" ).build() ;
+    }
+
+    @POST
+    @Path( "/json" )
+    @Consumes( MediaType.APPLICATION_JSON )
+    public Response postCoffeeJson( String coffeesJson ) {
+        log.info( "@POST json - " + coffeesJson ) ;
+        String count = addToCoffees( coffeesJson ) ;
+        return Response.status( 200).entity( "@POST postCoffeeJson " + count ).build() ;
     }
 
 
@@ -116,11 +142,11 @@ public class Coffees {
      * @param list - array of Coffee objects
      * @return String - JSON
      */
-    private String convertToJson( List<Coffee> list ) {
+    public String convertToJson( List<Coffee> list ) {
         ObjectMapper mapper = new ObjectMapper() ;
         mapper.configure( SerializationFeature.INDENT_OUTPUT, true ) ;
-        ObjectWriter writer = mapper.writer().withRootName( "Results" ) ;
-        String json = "" ;
+        ObjectWriter writer = mapper.writer().withRootName( "CoffeeJson" ) ;
+        String json = null ;
 
         try {
 //            json = mapper.writeValueAsString( list ) ;
@@ -136,6 +162,29 @@ public class Coffees {
             log.error( "IOException:  ", e ) ;
         }
         return json ;
+    }
+
+
+    /**
+     * @param coffeesJson - JSON string of Coffee objects to add to database
+     * @return String - count of the number of rows added to table
+     */
+    public String addToCoffees( String coffeesJson ) {
+        CoffeeDao dao = new CoffeeDao() ;
+        Integer count = 0 ;
+        ObjectMapper mapper = new ObjectMapper() ;
+
+        try {
+            CoffeeJson coffeeList = mapper.readValue( coffeesJson, CoffeeJson.class ) ;
+            for ( Coffee row : coffeeList.getCoffeeJson() ) {
+                int id = dao.createCoffee( row ) ;
+                log.info( " - " + String.valueOf( ++count ) + ")  Assigned ID: " + id ) ;
+            }
+        }
+        catch ( IOException e ) {
+            log.error( "JSON conversion to Entity failed ", e ) ;
+        }
+        return String.valueOf( count ) ;
     }
 
 }

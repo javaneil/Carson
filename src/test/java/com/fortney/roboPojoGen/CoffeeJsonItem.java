@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")
-public class ResultsItem{
+public class CoffeeJsonItem{
 
 	@JsonProperty("vendorMailCode")
 	private String vendorMailCode;
@@ -108,7 +108,7 @@ public class ResultsItem{
 	@Override
  	public String toString(){
 		return 
-			"ResultsItem{" + 
+			"CoffeeJsonItem{" + 
 			"vendorMailCode = '" + vendorMailCode + '\'' + 
 			",coffeeName = '" + coffeeName + '\'' + 
 			",vendorPhone = '" + vendorPhone + '\'' + 

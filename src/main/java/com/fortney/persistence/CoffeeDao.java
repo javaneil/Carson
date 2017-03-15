@@ -117,7 +117,7 @@ public class CoffeeDao {
             transaction.commit() ;
         }
         catch ( HibernateException hex ) {
-            log.error( "Session.beginTransaction fail:  ", hex ) ;
+            log.error( "Session.update fail:  ", hex ) ;
             if ( null != transaction ) {
                 transaction.rollback() ;
             }

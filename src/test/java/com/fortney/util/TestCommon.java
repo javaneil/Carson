@@ -9,10 +9,17 @@ import java.time.LocalDate;
  */
 public class TestCommon {
     /**
-     * Create a Coffee entity / object
+     * Create Coffee entity / object
      */
-    public static Coffee testCoffeeObj() {
-        Coffee retObj = new Coffee("Yuckban", "A truely disgusting cup of mud",
+    public static Coffee testCoffeeObj1() {
+        Coffee retObj = new Coffee("Yuckban", "Best choice if you are trying to quit drinking coffee",
+                "Queequegs", "123 Oak Street", "Seattle", "WA", "98101",
+                "1 800 555 1212" ) ;
+        return retObj ;
+    }
+
+    public static Coffee testCoffeeObj2() {
+        Coffee retObj = new Coffee("Mucka", "A truely disgusting cup of mud",
                 "Queequegs", "123 Oak Street", "Seattle", "WA", "98101",
                 "1 800 555 1212" ) ;
         return retObj ;
