@@ -1,6 +1,5 @@
-package com.neil.restservice;
+package com.fortney.restservice;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,7 +14,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -25,7 +23,7 @@ import java.util.List;
 @Produces( {MediaType.TEXT_PLAIN, MediaType.TEXT_HTML, MediaType.APPLICATION_JSON} )
 @Consumes( {MediaType.TEXT_PLAIN, MediaType.TEXT_HTML, MediaType.APPLICATION_JSON} )
 
-public class Coffees {
+public class CoffeeAPIs {
 
     private final Logger log = Logger.getLogger( this.getClass() ) ;
 
@@ -35,7 +33,7 @@ public class Coffees {
     @GET
     @Path( "/html" )
     @Produces( MediaType.TEXT_HTML )
-    public Response returnAllHtml() {
+    public Response getHtmlAll() {
         CoffeeDao dao = new CoffeeDao() ;
         String output = "<html><h2>Returning All</h2>" ;
         List<Coffee> coffees = dao.retrieveAllCoffees() ;
@@ -49,7 +47,7 @@ public class Coffees {
     @GET
     @Path( "/html/{id}" )
     @Produces( MediaType.TEXT_HTML )
-    public Response returnUser( @PathParam( "id" ) String id ) {
+    public Response getHtmlById(@PathParam( "id" ) String id ) {
         CoffeeDao dao = new CoffeeDao() ;
         String output = "<html><h1>Return by ID</h1>" ;
         Coffee coffee = dao.retrieveCoffee( Integer.valueOf( id ) ) ;
@@ -61,7 +59,7 @@ public class Coffees {
     @GET
     @Path( "/json" )
     @Produces( MediaType.APPLICATION_JSON )
-    public Response returnAllJson() {
+    public Response getJsonAll() {
         CoffeeDao dao = new CoffeeDao() ;
         List<Coffee> coffees = dao.retrieveAllCoffees() ;
         String output = convertToJson( coffees ) ;
@@ -71,7 +69,7 @@ public class Coffees {
     @GET
     @Path( "/json/{id}" )
     @Produces( MediaType.APPLICATION_JSON )
-    public Response returnUserJson( @PathParam( "id" ) String id ) {
+    public Response getJsonById(@PathParam( "id" ) String id ) {
         CoffeeDao dao = new CoffeeDao() ;
         List<Coffee> coffees = new ArrayList<>() ;
         coffees.add( dao.retrieveCoffee( Integer.valueOf( id ) ) ) ;
@@ -88,25 +86,25 @@ public class Coffees {
      */
     @POST
     @Path( "/" )
-    public void testPOST() {
+    public void post() {
         log.info( "@POST received" ) ;
     }
 
     @POST
     @Path( "/html" )
     @Consumes( MediaType.TEXT_HTML )
-    public Response postCoffeeHtml() {
+    public Response postHtml() {
         log.info( "@POST /html" ) ;
-        return Response.status( 200).entity( "@POST postCoffeeHtml" ).build() ;
+        return Response.status( 200).entity( "@POST postHtml" ).build() ;
     }
 
     @POST
     @Path( "/json" )
     @Consumes( MediaType.APPLICATION_JSON )
-    public Response postCoffeeJson( String coffeesJson ) {
+    public Response postJson(String coffeesJson ) {
         log.info( "@POST json - " + coffeesJson ) ;
-        String count = addToCoffees( coffeesJson ) ;
-        return Response.status( 200).entity( "@POST postCoffeeJson " + count ).build() ;
+        String response = addToCoffees( coffeesJson ) ;
+        return Response.status( 200).entity( response ).build() ;
     }
 
 
@@ -166,25 +164,35 @@ public class Coffees {
 
 
     /**
+     * Use ObjectMapper to convert JSON string to a CoffeeJson object
+     * that consists of a List of Coffee objects.
+     * Iterate through the list of Coffee objects adding each one to
+     * the Coffee entity.
+     *
      * @param coffeesJson - JSON string of Coffee objects to add to database
      * @return String - count of the number of rows added to table
      */
     public String addToCoffees( String coffeesJson ) {
-        CoffeeDao dao = new CoffeeDao() ;
-        Integer count = 0 ;
-        ObjectMapper mapper = new ObjectMapper() ;
+        String retStr = "" ;
+        ObjectMapper mapper = new ObjectMapper() ;  // JSON string to Java object mapper
+        CoffeeDao dao = new CoffeeDao() ;           // Data Access Object to MySQL database
 
         try {
             CoffeeJson coffeeList = mapper.readValue( coffeesJson, CoffeeJson.class ) ;
+
+            List<String> idList = new ArrayList<>() ;   // list of ids assigned to new rows in database)
             for ( Coffee row : coffeeList.getCoffeeJson() ) {
-                int id = dao.createCoffee( row ) ;
-                log.info( " - " + String.valueOf( ++count ) + ")  Assigned ID: " + id ) ;
+                int id = dao.createCoffee( row ) ;      // create and commit to database
+                idList.add( String.valueOf( id ) ) ;    // add new id (primary key) to list
+                log.info( " - " + String.valueOf( idList.size() ) + ")  Assigned ID: " + id ) ;
             }
+            // Convert list of IDs to JSON for Web Service acknowledge response
+            retStr = new PrimeKeysJson().convertToJson( idList ) ;
         }
         catch ( IOException e ) {
             log.error( "JSON conversion to Entity failed ", e ) ;
         }
-        return String.valueOf( count ) ;
+        return retStr ;
     }
 
 }

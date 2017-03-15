@@ -1,4 +1,4 @@
-package com.neil.restservice;
+package com.fortney.restservice;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fortney.entity.Coffee;
