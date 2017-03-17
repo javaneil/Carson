@@ -1,10 +1,6 @@
 package com.fortney.restservice;
 
-import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fortney.entity.Coffee;
 import com.fortney.persistence.CoffeeDao;
 import org.apache.log4j.Logger;
@@ -25,87 +21,135 @@ import java.util.List;
 
 public class CoffeeAPIs {
 
-    private final Logger log = Logger.getLogger( this.getClass() ) ;
+    private final Logger log = Logger.getLogger(this.getClass());
 
-    /** **********************************************************************
+    /**
+     * *********************************************************************
+     *
      * @GET
      */
     @GET
-    @Path( "/html" )
-    @Produces( MediaType.TEXT_HTML )
+    @Path("/html")
+    @Produces(MediaType.TEXT_HTML)
     public Response getHtmlAll() {
-        CoffeeDao dao = new CoffeeDao() ;
-        String output = "<html><h2>Returning All</h2>" ;
-        List<Coffee> coffees = dao.retrieveAllCoffees() ;
-        for ( Coffee coffee : coffees ) {
-            output += convertToHtmlText( coffee ) + "<br />" ;
+        CoffeeDao dao = new CoffeeDao();
+        String output = "<html><h2>Returning All</h2>";
+        List<Coffee> coffees = dao.retrieveAllCoffees();
+        for (Coffee coffee : coffees) {
+            output += convertToHtmlText(coffee) + "<br />";
         }
-        output += "</html>" ;
-        return Response.status(200).entity(output).build() ;
-    }
-
-    @GET
-    @Path( "/html/{id}" )
-    @Produces( MediaType.TEXT_HTML )
-    public Response getHtmlById(@PathParam( "id" ) String id ) {
-        CoffeeDao dao = new CoffeeDao() ;
-        String output = "<html><h1>Return by ID</h1>" ;
-        Coffee coffee = dao.retrieveCoffee( Integer.valueOf( id ) ) ;
-        output += convertToHtmlText( coffee ) ;
-        output += "</html>" ;
-        return Response.status( 200).entity(output).build() ;
-    }
-
-    @GET
-    @Path( "/json" )
-    @Produces( MediaType.APPLICATION_JSON )
-    public Response getJsonAll() {
-        CoffeeDao dao = new CoffeeDao() ;
-        List<Coffee> coffees = dao.retrieveAllCoffees() ;
-        String output = convertToJson( coffees ) ;
+        output += "</html>";
         return Response.status(200).entity(output).build();
     }
 
     @GET
-    @Path( "/json/{id}" )
-    @Produces( MediaType.APPLICATION_JSON )
-    public Response getJsonById(@PathParam( "id" ) String id ) {
+    @Path("/html/{id}")
+    @Produces(MediaType.TEXT_HTML)
+    public Response getHtmlById(@PathParam("id") String id) {
+        CoffeeDao dao = new CoffeeDao();
+        String output = "<html><h1>Return by ID</h1>";
+        Coffee coffee = dao.retrieveCoffee(Integer.valueOf(id));
+        output += convertToHtmlText(coffee);
+        output += "</html>";
+        return Response.status(200).entity(output).build();
+    }
+
+    @GET
+    @Path("/json")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getJsonAll() {
         CoffeeDao dao = new CoffeeDao() ;
-        List<Coffee> coffees = new ArrayList<>() ;
-        coffees.add( dao.retrieveCoffee( Integer.valueOf( id ) ) ) ;
-        String output = convertToJson( coffees ) ;
-        return Response.status( 200).entity(output).build() ;
+        CoffeeJson json = new CoffeeJson() ;
+        List<Coffee> coffees = dao.retrieveAllCoffees() ;
+        String output = json.convertToJson( coffees ) ;
+        return Response.status(200 ).entity( output ).build() ;
+    }
+
+    @GET
+    @Path("/json/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getJsonById(@PathParam("id") String id) {
+        CoffeeDao dao = new CoffeeDao() ;
+        CoffeeJson json = new CoffeeJson() ;
+        List<Coffee> coffees = new ArrayList<>();
+        coffees.add( dao.retrieveCoffee( Integer.valueOf(id) ) ) ;
+        String output = json.convertToJson( coffees ) ;
+        return Response.status(200 ).entity( output ).build() ;
     }
 
 
-    /** **********************************************************************
-     * @POST
-     * References:
-     *     https://jersey.java.net/documentation/latest/client.html
-     *     http://howtodoinjava.com/jersey/jersey-restful-client-examples/
+    /**
+     * *********************************************************************
+     *
+     * @POST References:
+     * https://jersey.java.net/documentation/latest/client.html
+     * http://howtodoinjava.com/jersey/jersey-restful-client-examples/
      */
     @POST
-    @Path( "/" )
-    public void post() {
-        log.info( "@POST received" ) ;
+    @Path("/")
+    public Response post() {
+        log.info("@POST received");
+        return Response.status(Response.Status.BAD_REQUEST).build();
     }
 
     @POST
-    @Path( "/html" )
-    @Consumes( MediaType.TEXT_HTML )
+    @Path("/html")
+    @Consumes(MediaType.TEXT_HTML)
     public Response postHtml() {
-        log.info( "@POST /html" ) ;
-        return Response.status( 200).entity( "@POST postHtml" ).build() ;
+        log.info("@POST /html");
+        return Response.status(200).entity("@POST postHtml").build();
     }
 
     @POST
-    @Path( "/json" )
+    @Path("/json")
     @Consumes( MediaType.APPLICATION_JSON )
-    public Response postJson(String coffeesJson ) {
-        log.info( "@POST json - " + coffeesJson ) ;
+    public Response postJson( String coffeesJson ) {
+        log.info( "@POST /json - " + coffeesJson ) ;
         String response = addToCoffees( coffeesJson ) ;
-        return Response.status( 200).entity( response ).build() ;
+        return Response.status(200).entity(response).build();
     }
+
+    @POST
+    @Path("/json/delete")
+    @Consumes( MediaType.APPLICATION_JSON )
+    public Response postJsonDelete( String idsJson ) {
+        log.info( "@POST /json/delete " ) ;
+        String response = deleteFromCoffees( idsJson ) ;
+        return Response.status( Response.Status.OK ).entity( response ).build() ;
+    }
+
+
+    /**
+     * *********************************************************************
+     */
+    @DELETE
+    @Path("/")
+    public Response delete() {
+        log.info("@DELETE received") ;
+        return Response.status( Response.Status.BAD_REQUEST ).build() ;
+    }
+
+    @DELETE
+    @Path("/{id}")
+    public Response deleteById( @PathParam("id") String id ) {
+        log.info("@DELETE {id} " ) ;
+        if( null != new CoffeeDao().deleteCoffee( Integer.valueOf( id ) ) ) {
+            return Response.status( Response.Status.OK ).build() ;
+        }
+        else {
+            return Response.status( Response.Status.OK).build();
+        }
+    }
+
+    @DELETE
+    @Path("/json")
+    @Consumes( MediaType.APPLICATION_JSON )
+    public Response deleteJson( String idsJson ) {
+        log.info( "@DELETE /json " ) ;
+        String response = deleteFromCoffees( idsJson ) ;
+        return Response.status( Response.Status.OK ).entity( response ).build() ;
+    }
+
 
 
     /** **********************************************************************
@@ -134,48 +178,19 @@ public class CoffeeAPIs {
 
 
     /**
-     * Convert list of coffee objects to JSON string
-     * References:
-     *      http://stackoverflow.com/questions/16022795/how-to-wrap-a-list-as-top-level-element-in-json-generated-by-jackson
-     * @param list - array of Coffee objects
-     * @return String - JSON
-     */
-    public String convertToJson( List<Coffee> list ) {
-        ObjectMapper mapper = new ObjectMapper() ;
-        mapper.configure( SerializationFeature.INDENT_OUTPUT, true ) ;
-        ObjectWriter writer = mapper.writer().withRootName( "CoffeeJson" ) ;
-        String json = null ;
-
-        try {
-//            json = mapper.writeValueAsString( list ) ;
-            json = writer.writeValueAsString( list ) ;
-        }
-        catch ( JsonGenerationException e ) {
-            log.error( "Jackson JsonGenerationException:  " , e ) ;
-        }
-        catch ( JsonMappingException e ) {
-            log.error ( "JsonMappingException:  ", e ) ;
-        }
-        catch ( IOException e ) {
-            log.error( "IOException:  ", e ) ;
-        }
-        return json ;
-    }
-
-
-    /**
      * Use ObjectMapper to convert JSON string to a CoffeeJson object
      * that consists of a List of Coffee objects.
      * Iterate through the list of Coffee objects adding each one to
      * the Coffee entity.
      *
      * @param coffeesJson - JSON string of Coffee objects to add to database
-     * @return String - count of the number of rows added to table
+     * @return String - JSON string with a list of IDs to the rows added to the table
      */
     public String addToCoffees( String coffeesJson ) {
-        String retStr = "" ;
         ObjectMapper mapper = new ObjectMapper() ;  // JSON string to Java object mapper
         CoffeeDao dao = new CoffeeDao() ;           // Data Access Object to MySQL database
+        IDsJson json = new IDsJson() ;              // ID list to JSON
+        String retIDs = null ;
 
         try {
             CoffeeJson coffeeList = mapper.readValue( coffeesJson, CoffeeJson.class ) ;
@@ -184,15 +199,46 @@ public class CoffeeAPIs {
             for ( Coffee row : coffeeList.getCoffeeJson() ) {
                 int id = dao.createCoffee( row ) ;      // create and commit to database
                 idList.add( String.valueOf( id ) ) ;    // add new id (primary key) to list
-                log.info( " - " + String.valueOf( idList.size() ) + ")  Assigned ID: " + id ) ;
+                log.info( " " + String.valueOf( idList.size() ) + ")  Assigned ID: " + id ) ;
             }
-            // Convert list of IDs to JSON for Web Service acknowledge response
-            retStr = new PrimeKeysJson().convertToJson( idList ) ;
+            // Convert list of IDs to JSON for Web Service response Entity
+            retIDs = json.convertToJson( idList ) ;
         }
         catch ( IOException e ) {
             log.error( "JSON conversion to Entity failed ", e ) ;
         }
-        return retStr ;
+        return retIDs ;
+    }
+
+    /**
+     * Use ObjectMapper to convert JSON stringto a List of ID Strings
+     * Interate through the list deleting each one from the Entity.
+     *
+     * @param idsJson - JSON string of Coffee IDs to Delete from database
+     * @return String - JSON string with a list of IDs successfully deleted from table
+     */
+    public String deleteFromCoffees( String idsJson ) {
+        ObjectMapper mapper = new ObjectMapper() ;  // JSON string to Java object mapper
+        CoffeeDao dao = new CoffeeDao() ;           // Data Access Object to MySQL database
+        IDsJson json = new IDsJson() ;
+        String retIDs = null ;
+
+        try {
+            IDsJson idList = mapper.readValue( idsJson, IDsJson.class ) ;
+
+            List<String> idsDeleted = new ArrayList<>() ;   // list of ids successfully deleted from database
+            for ( String id : idList.getIDsJson() ) {
+                if( null != dao.deleteCoffee( Integer.valueOf( id ) ) ) {
+                    idsDeleted.add( id ) ;  // acknowledge removal
+                }
+            }
+            // COnvert lisd of IDs to JSON for Web Service response Entity
+            retIDs = json.convertToJson( idsDeleted ) ;
+        }
+        catch ( IOException e ) {
+            log.error( "JSON conversion to ID List failed" ) ;
+        }
+        return retIDs ;
     }
 
 }

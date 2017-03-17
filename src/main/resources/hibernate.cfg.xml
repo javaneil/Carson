@@ -39,6 +39,9 @@ To start over, drop the database:
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
 
+        <!-- 2017-03-16nkf - added to flush the cache for junit testing?
+        <property name="hibernate.flushMode">ALWAYS</property> -->
+
         <!-- List the annotated entity class/es -->
         <mapping class="com.fortney.entity.Coffee"/>
         <mapping class="com.fortney.entity.Record"/>

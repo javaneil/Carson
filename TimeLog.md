@@ -75,7 +75,8 @@
 | Tu 14-Mar-2017 | Spent all day getting @POST web services working on Carson project.  Using Junit test as Client to post new coffees to the Coffee entity.  DAO commits to MySQL do not appear to take effect immediately.  Even after inserting a supposed 5-second delay, Junit DAO accesses of the DB do not reflect the changes.  Need to run Client in its own instance? | 9 | Jersey developers, in their infinite-wisdom, decided to rename Response.getEntity() to Response.readEntity() in version 2.x.  Unfortunately, even fairly recent examples posted use v1.x getEntity - spent a couple hours on this alone... |
 | We 15-Mar-2017 | Cloning review projects to local for analysis.  Begin Design reviews. | 2 | Maybe its just this POS Atom editor, but I'm finding editing .md files more frustrating then the line-editors of 30+ years ago... |
 |                | Added a JSON response.entity to the Web Service @POST to return the Primary Key IDs of the rows added. | 6 | Still have was appears to be a thread issue between TomEE and Junit |
-| Th 16-Mar-2017 |  |  |  |
+| Th 16-Mar-2017 | "Thread" issue appears to have been Hibernate caching issue between the TomEE and Junit instances.  Basically, must only use one instance for any givin test.  Tried using @DELETE, but cannot send a JSON Entity, so not really much use.   | 4 | Had to rewrite most of the junit tests.  Created several helper-methods that ended up reducing the size of many of the test methods |
+|                | Tried using @DELETE, but it cannot contain a JSON Entity, so not really much use.  Using @POST for Web Service Create & Delete | 3 | Per Paula's suggestion, created junit tests for the helper methods called by the Web Server code, but don't need a separate TomEE instance to use |
 | Fr 17-Mar-2017 |  |  |  |
 | Sa 18-Mar-2017 |  |  |  |
 | Su 19-Mar-2017 |  |  |  |

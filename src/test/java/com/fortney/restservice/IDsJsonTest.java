@@ -11,10 +11,10 @@ import static org.junit.Assert.*;
 /**
  * Created by Neil on 3/15/2017.
  */
-public class PrimeKeysJsonTest {
+public class IDsJsonTest {
     @Test
     public void convertToJson() throws Exception {
-        PrimeKeysJson idListJson = new PrimeKeysJson() ;
+        IDsJson idListJson = new IDsJson() ;
 
         List<String> testList = new ArrayList<>() ;
         testList.add( "22001" ) ;
@@ -23,16 +23,16 @@ public class PrimeKeysJsonTest {
         testList.add( "22004" ) ;
         testList.add( "22005" ) ;
 
-        // UUT - PrimeKeysJson.convertToJson() method
+        // UUT - IDsJson.convertToJson() method
         String jsonStr = idListJson.convertToJson( testList ) ;
 
         // now convert JSON string back into List of String object and compare
         ObjectMapper mapper = new ObjectMapper() ;
-        PrimeKeysJson resultList = mapper.readValue( jsonStr, PrimeKeysJson.class ) ;
+        IDsJson resultList = mapper.readValue( jsonStr, IDsJson.class ) ;
 
-        assertEquals( testList.size(), resultList.getPrimaryKeysJson().size() ) ;
-        for ( Integer idx = 0 ; idx < resultList.getPrimaryKeysJson().size(); idx++ ) {
-            assertEquals( testList.indexOf( idx ), resultList.getPrimaryKeysJson().indexOf( idx ) ) ;
+        assertEquals( testList.size(), resultList.getIDsJson().size() ) ;
+        for ( Integer idx = 0 ; idx < resultList.getIDsJson().size(); idx++ ) {
+            assertEquals( testList.indexOf( idx ), resultList.getIDsJson().indexOf( idx ) ) ;
         }
     }
 

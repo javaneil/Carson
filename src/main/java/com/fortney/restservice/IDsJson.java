@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by Neil on 3/15/2017.
  */
-public class PrimeKeysJson {
+public class IDsJson {
 
     private final Logger log = Logger.getLogger( this.getClass() ) ;
 
@@ -22,25 +22,17 @@ public class PrimeKeysJson {
      * This property is used by ObjectMapper to convert a JSON
      * string into a Java object.
       */
-    @JsonProperty( "PrimeKeysJson" )
-    private List<String> primaryKeysJson ;
+    @JsonProperty( "IDsJson" )
+    private List<String>idsJson ;
 
-    public List<String> getPrimaryKeysJson() {
-        return primaryKeysJson ;
+    public List<String> getIDsJson() {
+        return idsJson ;
     }
 
-    public void setPrimaryKeysJson( List<String> primaryKeysJson ) {
-        this.primaryKeysJson = primaryKeysJson ;
+    public void setIDsJson( List<String> idsJson ) {
+        this.idsJson = idsJson ;
     }
-/*
-    @Override
-    public String toString(){
-        return
-                "PrimeKeysJson{" +
-                        "primaryKeysJson = '" + primaryKeysJson + '\'' +
-                        "}";
-    }
-*/
+
 
     /**
      * Convert a list of Entity Primary Keys (as String objects)
@@ -55,7 +47,7 @@ public class PrimeKeysJson {
     public String convertToJson( List<String> list ) {
         ObjectMapper mapper = new ObjectMapper() ;
         mapper.configure( SerializationFeature.INDENT_OUTPUT, true ) ;
-        ObjectWriter writer = mapper.writer().withRootName( "PrimeKeysJson" ) ;
+        ObjectWriter writer = mapper.writer().withRootName( "IDsJson" ) ;
         String json = null ;
 
         try {
