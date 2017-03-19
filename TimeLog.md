@@ -77,8 +77,9 @@
 |                | Added a JSON response.entity to the Web Service @POST to return the Primary Key IDs of the rows added. | 6 | Still have was appears to be a thread issue between TomEE and Junit |
 | Th 16-Mar-2017 | "Thread" issue appears to have been Hibernate caching issue between the TomEE and Junit instances.  Basically, must only use one instance for any givin test.  Tried using @DELETE, but cannot send a JSON Entity, so not really much use.   | 4 | Had to rewrite most of the junit tests.  Created several helper-methods that ended up reducing the size of many of the test methods |
 |                | Tried using @DELETE, but it cannot contain a JSON Entity, so not really much use.  Using @POST for Web Service Create & Delete | 3 | Per Paula's suggestion, created junit tests for the helper methods called by the Web Server code, but don't need a separate TomEE instance to use |
-| Fr 17-Mar-2017 |  |  |  |
-| Sa 18-Mar-2017 |  |  |  |
+| Fr 17-Mar-2017 | Deployed project to remote server, but was unable to access Web Service using SoapUI. Web page accessible from browser.  Local & remote endpoints have different pathnames beyond just the URL/IP-address... | 2 | The .war deploy's path gets named in the .pom, the localhost in the Run/Debug configuration |
+|                | Unable to install updates when running Ubuntu on USB drive preventing installation of wifi driver | 3 | Able to install Ubuntu along side windows & dual-boot |
+| Sa 18-Mar-2017 | Plugged-in USB BLE on Ubuntu PC, update BlueZ, added cmake & TinyB.  An example command-line java program discovered a Finder profile BLE device.  Was able to import TinyB library into IntelliJ | 4 | Lots of source code (much in plain C) and zero documentation |
 | Su 19-Mar-2017 |  |  |  |
 | Mo 20-Mar-2017 |  |  |  |
 | Tu 21-Mar-2017 |  |  |  |

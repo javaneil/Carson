@@ -18,7 +18,7 @@ NOTE: For a deployed web application .WAR to connect to the AWS MySQL server
 
     <h2>*** Under Construction ***</h2>
     <p>
-        - 2017 March 14 -
+        - 2017 March 16 -
     </p>
     <br />
     <form action="admin" method="get">
