@@ -80,8 +80,8 @@
 | Fr 17-Mar-2017 | Deployed project to remote server, but was unable to access Web Service using SoapUI. Web page accessible from browser.  Local & remote endpoints have different pathnames beyond just the URL/IP-address... | 2 | The .war deploy's path gets named in the .pom, the localhost in the Run/Debug configuration |
 |                | Unable to install updates when running Ubuntu on USB drive preventing installation of wifi driver | 3 | Able to install Ubuntu along side windows & dual-boot |
 | Sa 18-Mar-2017 | Plugged-in USB BLE on Ubuntu PC, update BlueZ, added cmake & TinyB.  An example command-line java program discovered a Finder profile BLE device.  Was able to import TinyB library into IntelliJ | 4 | Lots of source code (much in plain C) and zero documentation |
-| Su 19-Mar-2017 |  |  |  |
-| Mo 20-Mar-2017 |  |  |  |
+| Su 19-Mar-2017 |  | 4 | Rode bike to New Glarus... |
+| Mo 20-Mar-2017 | Could build TinyB java example in IntelliJ, but initially couldn't find a javatinyb library at run-time.  Needed to add libjavatinyb.os to the external references.  The code now appears to be connecting to my Cypress PSoC "Finder" | 4 | Somewhat confuse about the libjavatinyb.os library, and pretty much the whole Linux Cmake process...  Need to dig deeper |
 | Tu 21-Mar-2017 |  |  |  |
 | We 22-Mar-2017 |  |  |  |
 | Th 23-Mar-2017 |  |  |  |
