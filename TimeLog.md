@@ -82,8 +82,9 @@
 | Sa 18-Mar-2017 | Plugged-in USB BLE on Ubuntu PC, update BlueZ, added cmake & TinyB.  An example command-line java program discovered a Finder profile BLE device.  Was able to import TinyB library into IntelliJ | 4 | Lots of source code (much in plain C) and zero documentation |
 | Su 19-Mar-2017 |  | 4 | Rode bike to New Glarus... |
 | Mo 20-Mar-2017 | Could build TinyB java example in IntelliJ, but initially couldn't find a javatinyb library at run-time.  Needed to add libjavatinyb.os to the external references.  The code now appears to be connecting to my Cypress PSoC "Finder" | 4 | Somewhat confuse about the libjavatinyb.os library, and pretty much the whole Linux Cmake process...  Need to dig deeper |
-| Tu 21-Mar-2017 |  |  |  |
-| We 22-Mar-2017 |  |  |  |
+| Tu 21-Mar-2017 | Week9 Tag Lib video and Activity 1.  IntelliJ seemed to have problems with the .jar dependency | 3 | Having some issues synchronizing the consumer with the tag lib.  |
+| We 22-Mar-2017 | Added a feature to the Tag Lib to calculate days remaining in the semester.  Deleted the Tag Lib .jar thinking Maven would auto-refresh it... big mistake.  Had to Delete the dependency in the .pom, restart IntelliJ, then add the dependency to get it to reimport it. | 3 | Even Reimport All Maven Projects, does't automatically refresh dependencies. |
+|                | Revisiting Cypress BLE tools (it's been over a year).  Able to modify a Find Me profile to control an RGB LED | 3 | Using Cypress USB fob & CySmart Windows tool to scan & communicate with BLE device.
 | Th 23-Mar-2017 |  |  |  |
 | Fr 24-Mar-2017 |  |  |  |
 | Sa 25-Mar-2017 |  |  |  |
