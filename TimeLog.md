@@ -85,9 +85,13 @@
 | Tu 21-Mar-2017 | Week9 Tag Lib video and Activity 1.  IntelliJ seemed to have problems with the .jar dependency | 3 | Having some issues synchronizing the consumer with the tag lib.  |
 | We 22-Mar-2017 | Added a feature to the Tag Lib to calculate days remaining in the semester.  Deleted the Tag Lib .jar thinking Maven would auto-refresh it... big mistake.  Had to Delete the dependency in the .pom, restart IntelliJ, then add the dependency to get it to reimport it. | 3 | Even Reimport All Maven Projects, does't automatically refresh dependencies. |
 |                | Revisiting Cypress BLE tools (it's been over a year).  Able to modify a Find Me profile to control an RGB LED | 3 | Using Cypress USB fob & CySmart Windows tool to scan & communicate with BLE device.
-| Th 23-Mar-2017 |  |  |  |
-| Fr 24-Mar-2017 |  |  |  |
-| Sa 25-Mar-2017 |  |  |  |
-| Su 26-Mar-2017 |  |  |  |
-| Mo 27-Mar-2017 |  |  |  |
-| Tu 28-Mar-2017 |  |  |  |
+| Th 23-Mar-2017 | Was able to communicate with BLE device from Dell computer and IntelliJ.  Attempting to replicate on HP-Mini | 3 | Installing BlueZ 5.4.3 on HP-Mini, which should leave bluetools in place |
+| Fr 24-Mar-2017 | HP-Mini "Discovers" BLE device, but cannot write to it. | 4 |  |
+| Sa 25-Mar-2017 | Tried numerous changes and re-installs, eventually hung-up the bluetoothd deamon... | 4 | Much of the on-line help use different tools across many different version of BlueZ - much conflicting suggestions... |
+| Su 26-Mar-2017 | Re-installed Ubuntu on HP-Mini, kept default BlueZ 5.3.7.  The bluetoothd daemon logs errors starting-up (not seen on Dell), not sure what they all mean...  Research Linux Deamons and D-Bus. | 6 | Real blocker!  These are both x86 processors & the same USB-bluetooth adapter |
+| Mo 27-Mar-2017 | Week-10 videos, begin conversion of barber shop to trick-or-treat house | 5 | Need to think of Junit tests... |
+| Tu 28-Mar-2017 | Finish port to trick-or-treat | 1 |  |
+| We 29-Mar-2017 |  |  |  |
+| Th 30-Mar-2017 |  |  |  |
+| Fr 31-Mar-2017 |  |  |  |
+! Sa 01-Apr-2017 |  |  |  |
