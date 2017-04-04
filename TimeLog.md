@@ -91,7 +91,12 @@
 | Su 26-Mar-2017 | Re-installed Ubuntu on HP-Mini, kept default BlueZ 5.3.7.  The bluetoothd daemon logs errors starting-up (not seen on Dell), not sure what they all mean...  Research Linux Deamons and D-Bus. | 6 | Real blocker!  These are both x86 processors & the same USB-bluetooth adapter |
 | Mo 27-Mar-2017 | Week-10 videos, begin conversion of barber shop to trick-or-treat house | 5 | Need to think of Junit tests... |
 | Tu 28-Mar-2017 | Finish port to trick-or-treat | 1 |  |
-| We 29-Mar-2017 |  |  |  |
-| Th 30-Mar-2017 |  |  |  |
-| Fr 31-Mar-2017 |  |  |  |
-! Sa 01-Apr-2017 |  |  |  |
+| We 29-Mar-2017 | Test, debug & commit Week-10 exercise. | 4 |  |
+| Th 30-Mar-2017 | Back to Ubuntu & BlueZ-5.44, if I don't try to fix System Settings, the BlueZ deamon seems OK.  I am able to get BLE working on the HP-Mini..  | 4 | Can scan for devices, connect & obtain characteristics. |
+| Fr 31-Mar-2017 | At one point I was able to restore System settings by re-installing unity-control-center after I had a stable bluetoothd (daemon), but after a restart, bluetoothd was logging errors again. | 5 |  |
+| Sa 01-Apr-2017 | Spent a great deal of time trying to figure-out how to fix System Settings without breaking BlueZ, but to no avail. | 4 | Tried to compare the working Dell with HP-Mini, but there's so many files... |
+|                |  | 3 | Ride to Cross Plains - Springfield Corners... |
+| Su 02-Apr-2017 | Install Tomcat on HP-Mini, still launching from command-line, though found severa examples of creating a Tomcat daemon at start-up.  Able to deploy a .war created with IntelliJ Community to Tomcat on HP-Mini | 3 |  |
+| Mo 03-Apr-2017 | Creating new web app using a servlet in IntelliJ Community and verifying they deploy properly to Tomcat.  Made yet-another attempt to restore Ubuntu System Settings on the HP-Mini with some success - bluetoothd logs 1 warning/error, but otherwise seems to work! |  | Can't debug within IntelliJ Community, but as long as I can deploy, I should be able to debug using logging. |
+| Tu 04-Apr-2017 |  |  |  |
+| We 05-Apr-2017 |  |  |  |
