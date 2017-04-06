@@ -97,6 +97,10 @@
 | Sa 01-Apr-2017 | Spent a great deal of time trying to figure-out how to fix System Settings without breaking BlueZ, but to no avail. | 4 | Tried to compare the working Dell with HP-Mini, but there's so many files... |
 |                |  | 3 | Ride to Cross Plains - Springfield Corners... |
 | Su 02-Apr-2017 | Install Tomcat on HP-Mini, still launching from command-line, though found severa examples of creating a Tomcat daemon at start-up.  Able to deploy a .war created with IntelliJ Community to Tomcat on HP-Mini | 3 |  |
-| Mo 03-Apr-2017 | Creating new web app using a servlet in IntelliJ Community and verifying they deploy properly to Tomcat.  Made yet-another attempt to restore Ubuntu System Settings on the HP-Mini with some success - bluetoothd logs 1 warning/error, but otherwise seems to work! |  | Can't debug within IntelliJ Community, but as long as I can deploy, I should be able to debug using logging. |
-| Tu 04-Apr-2017 |  |  |  |
-| We 05-Apr-2017 |  |  |  |
+| Mo 03-Apr-2017 | Creating new web app using a servlet in IntelliJ Community and verifying they deploy properly to Tomcat.  Made yet-another attempt to restore Ubuntu System Settings on the HP-Mini with some success - bluetoothd logs 1 warning/error, but otherwise seems to work! | 4 | Can't debug within IntelliJ Community, but as long as I can deploy, I should be able to debug using logging. |
+| Tu 04-Apr-2017 | Compare creating an empty Maven vs Archetype WebApp on IntelliJ, not hugely different, WebApp wizard includes web specific folders & default index.jsp.  Successfuly demonstrate BLE connectivity on MATC campus. | 3 | Change in environment didn't appear to break anything so far. |
+| We 05-Apr-2017 | Verifed new install of IntelliJ Community on a Windows computer also launches Tomcat when the Maven-Tomcat plugin is used | 5 | Minor remodling of basement workspace to provide space for additional computers... |
+| Th 06-Apr-2017 | Employ a second GitHub account I had created for my non-school work to contain Linux/BLE development repositories. | 1 | TODO: can BLE be accessed from servlet? |
+| Fr 07-Apr-2017 |  |  |  |
+| Sa 08-Apr-2017 |  |  |  |
+| Su 09-Apr-2017 |  |  |  |
