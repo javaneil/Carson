@@ -101,6 +101,14 @@
 | Tu 04-Apr-2017 | Compare creating an empty Maven vs Archetype WebApp on IntelliJ, not hugely different, WebApp wizard includes web specific folders & default index.jsp.  Successfuly demonstrate BLE connectivity on MATC campus. | 3 | Change in environment didn't appear to break anything so far. |
 | We 05-Apr-2017 | Verifed new install of IntelliJ Community on a Windows computer also launches Tomcat when the Maven-Tomcat plugin is used | 5 | Minor remodling of basement workspace to provide space for additional computers... |
 | Th 06-Apr-2017 | Employ a second GitHub account I had created for my non-school work to contain Linux/BLE development repositories. | 1 | TODO: can BLE be accessed from servlet? |
-| Fr 07-Apr-2017 |  |  |  |
-| Sa 08-Apr-2017 |  |  |  |
-| Su 09-Apr-2017 |  |  |  |
+| Fr 07-Apr-2017 | Thought I had successfully integrated the BLE libraries into a Mavenized Tomcat IntelliJ project, but it broke again.  Attempted to upgrade IntelliJ to 17.1, now can't get it to build without error at all...  Time to uninstall IntelliJ & start over. | 4 | Seemed to work better if I import (Shft-Ctrl-Alt-S) the TinyB libs in Platform-Settings, not Project-Settings |
+| Sa 08-Apr-2017 | Took several attempts to do a clean re-install of IntelliJ 17.1, this time in /opt/ instead of /home/neil/...   | 2 | Left for overnight bikeride to New Glarus Woods |
+| Su 09-Apr-2017 | Started a new .jar library project.  Not sure where default IdeaProjects is... | 2 | Return from overnight ride. |
+| Mo 10-Apr-2017 | Since I was starting over anyhow, I revisited adding log4j to IntelliJ + Maven. | 3 | This was somewhat a new thing in Ubuntu. |
+| Tu 11-Apr-2017 |  |  |  |
+| We 12-Apr-2017 |  |  |  |
+| Th 13-Apr-2017 |  |  |  |
+| Fr 14-Apr-2017 |  |  |  |
+| Sa 15-Apr-2017 |  |  |  |
+| Su 16-Apr-2017 |  |  |  |
+| Mo 17-Apr-2017 |  |  |  |
