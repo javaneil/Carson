@@ -106,9 +106,13 @@
 | Su 09-Apr-2017 | Started a new .jar library project.  Not sure where default IdeaProjects is... | 2 | Return from overnight ride. |
 | Mo 10-Apr-2017 | Since I was starting over anyhow, I revisited adding log4j to IntelliJ + Maven. | 3 | This was somewhat a new thing in Ubuntu. |
 | Tu 11-Apr-2017 |  |  |  |
-| We 12-Apr-2017 |  |  |  |
+| We 12-Apr-2017 | Made several attempts to create a .jar containing the libjavatinyb.so library, but no success. | 4 |  |
 | Th 13-Apr-2017 |  |  |  |
-| Fr 14-Apr-2017 |  |  |  |
+| Fr 14-Apr-2017 | Looked into environment variables, observed the TinyB examples loaded LD_LIBRARY_PATH, but it was not persisted.  Adding it to /etc/environment persists it. | 6 | With the path set, it is unecessary to include libjavatinyb in the IntelliJ project. |
 | Sa 15-Apr-2017 |  |  |  |
-| Su 16-Apr-2017 |  |  |  |
-| Mo 17-Apr-2017 |  |  |  |
+| Su 16-Apr-2017 | Getting back into BLE and the Discovery process.  How & where are discovered devices persisted??? | 2 |  |
+| Mo 17-Apr-2017 |  | 6 | Bikeride Prairie du Sac, Mazomanie |
+| Tu 18-Apr-2017 | Watch Week-13 video... |  |  |
+| We 19-Apr-2017 |  |  |  |
+| Th 20-Apr-2017 |  |  |  |
+| Fr 21-Apr-2017 |  |  |  |
