@@ -112,7 +112,7 @@
 | Sa 15-Apr-2017 |  |  |  |
 | Su 16-Apr-2017 | Getting back into BLE and the Discovery process.  How & where are discovered devices persisted??? | 2 |  |
 | Mo 17-Apr-2017 |  | 6 | Bikeride Prairie du Sac, Mazomanie |
-| Tu 18-Apr-2017 | Watch Week-13 video... |  |  |
-| We 19-Apr-2017 |  |  |  |
-| Th 20-Apr-2017 |  |  |  |
+| Tu 18-Apr-2017 | Watch Week-13 video... | 1 |  |
+| We 19-Apr-2017 | Integrating BLE TinyB into .jsp, could not get EL to work, included "@taglib", but that wasn't enough - had to change web.xml for "web-app version 2.5"?  Got crude BLE discover Device/Services/Characteristics working and a simple web app to change the Alert state. | 6 | Still need to retrieve data from BLE Device... |
+| Th 20-Apr-2017 | Cloned week-13 exercise. |  |  |
 | Fr 21-Apr-2017 |  |  |  |
