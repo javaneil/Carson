@@ -114,5 +114,14 @@
 | Mo 17-Apr-2017 |  | 6 | Bikeride Prairie du Sac, Mazomanie |
 | Tu 18-Apr-2017 | Watch Week-13 video... | 1 |  |
 | We 19-Apr-2017 | Integrating BLE TinyB into .jsp, could not get EL to work, included "@taglib", but that wasn't enough - had to change web.xml for "web-app version 2.5"?  Got crude BLE discover Device/Services/Characteristics working and a simple web app to change the Alert state. | 6 | Still need to retrieve data from BLE Device... |
-| Th 20-Apr-2017 | Cloned week-13 exercise. |  |  |
-| Fr 21-Apr-2017 |  |  |  |
+| Th 20-Apr-2017 | Cloned week-13 exercise.  Made changes to send answer message back to TestMessageBean. | 4 | I have kind of a fuzzy understanding of message-driven-beans... |
+| Fr 21-Apr-2017 | Do any standard BLE profiles work for this project?  Probably need to develop a custom profile. | 2 | Childcare day... |
+| Sa 22-Apr-2017 | Liquid Crystal Display research.  What can I use for a cheap/quick demo.  Segment vs character vs dot-matrix, power consumption issues.  LCDs designed for (dumb) cellphones look very promising, low cost & power, are they still being made??? | 3 | Yardwork day... |
+| Su 23-Apr-2017 |  | 6 | Bikeride to Barneveld |
+| Mo 24-Apr-2017 | Interface 4-row by 20-character off-the-shelf LCD to Cypress BLE PSoc.  Review custom BLE profile development, UUID generation. | 4 | Need to define urn properties that need to be supported by the BLE profile |
+| Tu 25-Apr-2017 |  |  |  |
+| We 26-Apr-2017 |  |  |  |
+| Th 27-Apr-2017 |  |  |  |
+| Fr 28-Apr-2017 |  |  |  |
+| Sa 29-Apr-2017 |  |  |  |
+| Su 30-Apr-2017 |  |  |  |
