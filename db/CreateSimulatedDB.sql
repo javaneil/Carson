@@ -1,10 +1,11 @@
 ##
 ## Enterprise Java Spring 2017
 ## Individual Project "Carson the Coffee Butler"
+## C:\Users\Neil\IdeaProjects\Carson\db\CreateSimulatedDB.sql
 ## Neil Fortney
 ##
 ## NOTE: For a deployed web application .WAR to connect to the MySQL server
-##       the connector .jar must be copied to the Tomcat /lib directory
+##       the connector .jar must be copied to the Tomcat /lib directory.
 ##       SSH into your ASW instance and install libmysql-java to get the .jar
 ##       $ sudo apt-get install libmysql-java
 ##       $ cd /usr/share/java
@@ -88,7 +89,7 @@ CREATE TABLE `samples` (
 ) ;
 
 
-### TODO: Add Authenication and Authorization tables ###
+## Add Authenication and Authorization tables
 CREATE TABLE users (
 user_name VARCHAR(15) NOT NULL PRIMARY KEY,
 user_pass VARCHAR(15) NOT NULL
@@ -101,12 +102,19 @@ PRIMARY KEY (user_name, role_name)
 ) ;
 
 
+##
+## Create a user "tomcat" with restricted access
+## Test with command-line login:
+##		mysql -u tomcat -p
+##		password: tomcat
+##
 USE mysql ;
 DROP USER IF EXISTS 'tomcat'@'localhost' ;
 CREATE USER 'tomcat'@'localhost' IDENTIFIED BY 'tomcat' ;
 GRANT SELECT ON carson.* TO 'tomcat'@'localhost' ;
 FLUSH PRIVILEGES ;
 USE carson ;
+
 
 ##
 ## Fill tables with simulated data
@@ -123,15 +131,15 @@ INSERT INTO user_roles VALUES
 ;
 
 ## TODO: Read .csv files from other than the MySQL default data file location?
-## If the MySQL server (not Workbench) cannot find/open the .csv files, you'll get an error like what follows:
+## If the MySQL server (not Workbench) cannot find/open the .csv files, you will get an error like what follows:
 ## ERROR 1290: The MySQL server is running with the --secure-file-priv option so it cannot execute this statement
 ## You may use the following to find the path being used to look for the .csv file:
 ## SHOW VARIABLES LIKE 'secure_file_priv' ;
 
 ## Use following path when running local on Windows
-#LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 5.7/Uploads/FakeCoffees.csv'
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 5.7/Uploads/FakeCoffees.csv'
 ## Use this path when running remote on Ubuntu over SSH (you must copy the .csv file to Ubuntu environment first!)
-LOAD DATA INFILE '/var/lib/mysql-files/FakeCoffees.csv'
+#LOAD DATA INFILE '/var/lib/mysql-files/FakeCoffees.csv'
   INTO TABLE coffee
   FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n'
   IGNORE 1 ROWS
@@ -152,8 +160,8 @@ INSERT INTO urns ( inventory_number, brand, model, commission_date ) VALUES
 
 
 SET foreign_key_checks = 0 ;
-#LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 5.7/Uploads/FakeRecords.csv'
-LOAD DATA INFILE '/var/lib/mysql-files/FakeRecords.csv'
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 5.7/Uploads/FakeRecords.csv'
+#LOAD DATA INFILE '/var/lib/mysql-files/FakeRecords.csv'
   INTO TABLE records
   FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n'
   IGNORE 1 ROWS
@@ -164,8 +172,8 @@ SET foreign_key_checks = 1 ;
 
 
 SET foreign_key_checks = 0 ;
-#LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 5.7/Uploads/FakeSamples.csv'
-LOAD DATA INFILE '/var/lib/mysql-files/FakeSamples.csv'
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 5.7/Uploads/FakeSamples.csv'
+#LOAD DATA INFILE '/var/lib/mysql-files/FakeSamples.csv'
   INTO TABLE samples
   FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n'
   IGNORE 1 ROWS

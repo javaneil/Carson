@@ -53,7 +53,7 @@ public class CoffeeAPIsTest {
     }
 
     /** **********************************************************************
-     * Test helper methods:
+     * Test JSON helper methods:
      *      addToCoffees()
      *      deleteFromCoffees()
      */
@@ -91,7 +91,8 @@ public class CoffeeAPIsTest {
 
     /** **********************************************************************
      * Test Web Service methods
-     * NOTE: Must first launch a separate instance of TomEE
+     * NOTE: Must first Deploy to and launch a separate instance of TomEE.
+     *       Launch using debugger to enable breakpoints on TomEE server.
      */
 
     /**
@@ -106,8 +107,7 @@ public class CoffeeAPIsTest {
 
 
     /**
-     * Add a new Coffee type to list locally, then confirm it has been persisted
-     * using web services
+     * Add a new Coffee type using web services, then confirm it has been persisted
      * @throws Exception
      */
     @Test
@@ -125,6 +125,7 @@ public class CoffeeAPIsTest {
         // verify size increased by list.size()
         assertEquals( size + list.size(), retrieveJsonAll().getCoffeeJson().size() ) ;
 
+        // retrieve row by ID using web services
         String id = ids.getIDsJson().get(0) ;
         Coffee result = getJsonById( id ) ;
 
@@ -140,7 +141,7 @@ public class CoffeeAPIsTest {
 
         // delete added row and verify size is same as when test started
         assertEquals( id, deleteJson( ids ).getIDsJson().get(0) ) ;
-        assertEquals( size,retrieveJsonAll().getCoffeeJson().size() ) ;
+        assertEquals( size, retrieveJsonAll().getCoffeeJson().size() ) ;
     }
 
 
@@ -152,10 +153,9 @@ public class CoffeeAPIsTest {
     /**
      * Add two new rows to Coffee entity using Web Service Post.
      * Verifies post response contains two IDs.
-     * TODO Fails to find row by ID, possible thread issue?  Need to use Web Service to Delete too?
-     * Remove added rows
+     * Remove added rows using web services.
      *
-      * @throws Exception
+     * @throws Exception
      */
     @Test
     public void postJson() throws Exception {

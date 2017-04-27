@@ -119,8 +119,8 @@
 | Sa 22-Apr-2017 | Liquid Crystal Display research.  What can I use for a cheap/quick demo.  Segment vs character vs dot-matrix, power consumption issues.  LCDs designed for (dumb) cellphones look very promising, low cost & power, are they still being made??? | 3 | Yardwork day... |
 | Su 23-Apr-2017 |  | 6 | Bikeride to Barneveld |
 | Mo 24-Apr-2017 | Interface 4-row by 20-character off-the-shelf LCD to Cypress BLE PSoc.  Review custom BLE profile development, UUID generation. | 4 | Need to define urn properties that need to be supported by the BLE profile |
-| Tu 25-Apr-2017 |  |  |  |
-| We 26-Apr-2017 |  |  |  |
+| Tu 25-Apr-2017 | Got a custom BLE profile writing characters to the LCD | 4 | Who knew how complicated this could be... |
+| We 26-Apr-2017 | Reviewed my long neglected individual project... I had forgotten much about it.  Cleaned-up some code and re-ran junit tests. | 6 | AWS instructed me to restart my instance, so I did, and it once again issued a new IP address ;^{  Had to update PuTTY, restart TomEE & the Student github link... |
 | Th 27-Apr-2017 |  |  |  |
 | Fr 28-Apr-2017 |  |  |  |
 | Sa 29-Apr-2017 |  |  |  |

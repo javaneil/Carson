@@ -62,7 +62,6 @@ public class RecordDaoTests {
         if ( (null != updRecord) && (0 < id) ) {
             dao.deleteRecord( id ) ;
         }
-
     }
 
     @Test

@@ -49,7 +49,7 @@ public class AssociationDaoTests {
         //TODO verify reads from associated tables
         for ( Record rec : records ) {
             log.info( rec.getUrnID().getBrand() +
-                    "  " +  rec.getCoffeeID().getCoffeeName() +
+                    "  " + rec.getCoffeeID().getCoffeeName() +
                     "  " + rec.getCurrentLocation() ) ;
         }
     }

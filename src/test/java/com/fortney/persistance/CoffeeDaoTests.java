@@ -64,7 +64,7 @@ public class CoffeeDaoTests {
      * @throws Exception
      */
     @Test
-    public void getUser() throws Exception {
+    public void getCoffee() throws Exception {
         int size = dao.retrieveAllCoffees().size() ;
         int id = dao.createCoffee( testCoffeeObj1() ) ;
         assertTrue( 0 < id ) ;
@@ -80,7 +80,7 @@ public class CoffeeDaoTests {
      * @throws Exception
      */
     @Test
-    public void updateUser() throws Exception {
+    public void updateCoffee() throws Exception {
         int size = dao.retrieveAllCoffees().size() ;
         Coffee coffee = testCoffeeObj1() ;
         int id = dao.createCoffee( coffee ) ;

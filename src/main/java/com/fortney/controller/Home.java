@@ -27,26 +27,24 @@ public class Home extends HttpServlet {
             throws ServletException, IOException {
 
         RequestDispatcher dispatcher = null ;
-
         CoffeeDao coffee = new CoffeeDao() ;
 
-        log.info( req.getParameter( "findString" ) ) ;
         log.info( req.getParameter( "submit" ) ) ;
-
         if ( req.getParameter( "submit" ).equals( "Find" ) ) {
             log.info( req.getParameter( "findString" ) ) ;
 //            req.setAttribute( "users", userData.getUsersByLastName(req.getParameter( "searchTerm" ) ) ) ;
+            //TODO - replace this week-1 plagiarized code with something relevant to this project...
         }
+/* admin & emp removed from form and each given a discrete button
         else if ( req.getParameter( "submit" ).equals( "setup1" ) ) {
             log.info( "Setup1" ) ;
-//            req.setAttribute( "users", userData.getAllUsers() ) ;
             dispatcher = req.getRequestDispatcher("/admin.jsp" ) ;
         }
         else if ( req.getParameter( "submit" ).equals( "setup2" ) ) {
             log.info( "Setup2" ) ;
-//            req.setAttribute( "", "" ) ;
             dispatcher = req.getRequestDispatcher("/emp.jsp" ) ;
         }
+*/
         else if ( req.getParameter( "submit" ).equals( "coffees" ) ) {
             log.info( "Coffees" ) ;
             req.setAttribute( "coffeeList", coffee.retrieveAllCoffees() ) ;
@@ -56,7 +54,7 @@ public class Home extends HttpServlet {
         if ( null == dispatcher ) {
             dispatcher = req.getRequestDispatcher( "/index.jsp" ) ;
         }
-        dispatcher.forward( req, resp);
+        dispatcher.forward( req, resp ) ;
     }
 
 }

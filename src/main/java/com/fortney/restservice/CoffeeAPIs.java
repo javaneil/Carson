@@ -211,7 +211,7 @@ public class CoffeeAPIs {
     }
 
     /**
-     * Use ObjectMapper to convert JSON stringto a List of ID Strings
+     * Use ObjectMapper to convert JSON string to a List of ID Strings
      * Interate through the list deleting each one from the Entity.
      *
      * @param idsJson - JSON string of Coffee IDs to Delete from database
@@ -232,7 +232,7 @@ public class CoffeeAPIs {
                     idsDeleted.add( id ) ;  // acknowledge removal
                 }
             }
-            // COnvert lisd of IDs to JSON for Web Service response Entity
+            // Convert list of IDs to JSON for Web Service response Entity
             retIDs = json.convertToJson( idsDeleted ) ;
         }
         catch ( IOException e ) {

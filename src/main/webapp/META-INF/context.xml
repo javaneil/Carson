@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-    <!-- 2017-02-25 - moved here from TomEE on server -->
+    <!-- 2017-02-25 - moved here from TomEE server -->
     <Realm className="org.apache.catalina.realm.JDBCRealm"
            driverName="com.mysql.jdbc.Driver"
            connectionURL="jdbc:mysql://localhost:3306/carson?user=tomcat&amp;password=tomcat"
